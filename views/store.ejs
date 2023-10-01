@@ -6,11 +6,17 @@
     <head>
 
         <!-- title of the page when searched and in the tab-->
-        <title>Arte - Store </title>
+        <title>Arte - Store</title>
 
         <!-- description of the page when searched for in -->
         <!-- google search results -->
-        <meta name="description" content="">
+        <meta name="description" 
+              content="At Arte, we celebrate diversity and 
+                       individuality. Our clothing empowers you to express
+                       your unique personality and make a bold statement without
+                       saying a word. Whether you're dressing for a special 
+                       occasion or expressing your daily creativity, we've got 
+                       you covered.">
         
         <link href="styles.css" rel="stylesheet">
 
@@ -64,7 +70,13 @@
 
             <!-- divided sections for all music -->
             <div class="shop-items">
-                <% items.music.forEach(function(item){  %>
+                <!-- 
+                    Loop through all the store items data 
+                    and render html components before sending to the user
+                    item holds the data for each item in the array
+                -->
+                <% items.music.forEach( function(item) {  %>
+
                     <div class="shop-item" data-item-id = "<%= item.id %>">
                         <!-- divided sections for Album Info -->
                         <span class="shop-item-title"> <%= item.name %> </span>
@@ -74,6 +86,7 @@
                             <button class="btn btn-primary shop-item-button" role="button">ADD TO CART</button>
                         </div>
                     </div>
+
                 <% }) %>
             </div>
         </section>
@@ -87,6 +100,11 @@
             <div class="shop-items">
 
 
+                <!-- 
+                    Loop through all the merch item data 
+                    and render html components before sending to the user
+                    merch item holds the data for each merch in the array
+                -->
                 <% items.merch.forEach(function(item){  %>
                     <div class="shop-item" data-item-id = "<%= item.id %>">
                         <!-- divided sections for Album Info -->
@@ -129,11 +147,8 @@
 
 
         <footer class="main-footer">
-
             <div class="container main-footer-container">
-
-                <h3 class = "band-name"> Bowow </h3>
-
+                <h3 class = "band-name"> Arte </h3>
                 <ul class="nav footer-nav">
                     <li>
                         <a href="https://www.youtube.com/channel/UCuXSuzae1gH6HCu9oUE9Z3g/featured">
@@ -156,12 +171,8 @@
                         </a>
                     </li>
                 </ul>
-
             </div>
-            
         </footer>
 
-
     </body>
-
 </html>
