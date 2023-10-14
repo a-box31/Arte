@@ -28,7 +28,30 @@ app.use(express.json());
 //app front end needs to be located as a static folder: now server shows the website
 app.use(express.static("public"));
 
-app.get("/store", function (req, res) {
+// route the home page
+app.get("/", function (req, res) {
+  res.render("index.ejs")
+});
+// route the about page
+app.get("/ABOUT", function (req, res) {
+  //read the items json file, with an error function just in case
+  res.render("about.ejs");
+});
+// route the FAQS page
+app.get("/FAQS", function (req, res) {
+  //read the items json file, with an error function just in case
+  res.render("faqs.ejs");
+});
+// route the contacts page
+app.get("/CONTACT", function (req, res) {
+  //read the items json file, with an error function just in case
+  res.render("contact.ejs");
+});
+
+
+
+
+app.get("/STORE", function (req, res) {
   //read the items json file, with an error function just in case
   fs.readFile("items.json", function (error, data) {
     if (error) {
