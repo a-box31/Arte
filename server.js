@@ -20,6 +20,7 @@ const fs = require("fs");
 // stripe middleware for payment processing
 const stripe = require("stripe")(stripeSecretKey);
 
+
 //view engine allows to embed server side code in the front end html pages
 app.set("view engine", "ejs");
 // we are now able to parse body element as a JSON object to access properties
@@ -77,6 +78,7 @@ app.post("/purchase", function (req, res) {
 
       // create a new charge on the bill from the total above
       stripe.charges
+        // charge gets sent to stripe
         .create({
           amount: total,
           source: req.body.stripeTokenId,

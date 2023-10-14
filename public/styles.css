@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Slabo+27px&family=Space+Mono&display=swap');
 /*
 If loading from a computer:
 
@@ -19,18 +16,15 @@ If loading from a computer:
 */
 
 @font-face {
-    font-family: Sound Wave;
-    src: url("Fonts/Sound_Wave_Font.ttf");
+  font-family: GrandHotel;
+  src: url("Fonts/GrandHotel.ttf");
 
-    font-weight: normal;
-    font-style: normal;
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-
 * {
-
-    /* 
+  /* 
     size of elements are determined by padding, margin, and content 
 
     so if we set a element to be 200px and the padding to be 20px, then 
@@ -38,330 +32,243 @@ If loading from a computer:
 
     without it the total area would be 240px
     */
-    box-sizing: border-box;
-    
+  box-sizing: border-box;
 
-    /* font family (default font to be used )*/
-    font-family: Russo One;
-    color: #777;
+  /* font family (default font to be used )*/
+  font-family: 'Slabo 27px';
+  /* font-family: Abel; */
 
+  color: #777;
+  margin: 0;
+  padding: 0;
 }
 
-html, body{
-
-    /*
+html,
+body {
+  /*
     some html elements have default paddings
     these were removed to make the heading look better
      */
-    margin: 0;
-    padding: 0;
-
+  margin: 0;
+  padding: 0;
 }
 
-.nav ul {
+.wrapper {
+  background-color: rgb(223, 223, 223);
+  height: 100vh;
+  width: 100vw;
 
-    /* 
-    Gets rid of margin at the top because nav is first element and should
-    only be the nav with a list in it
-    */
-    margin: 0; 
-
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.nav li {
-    /* the navigation list elements should be displayed in line */
-    display: inline
-
+.content {
+  margin: 13px;
+  background-color: white;
+  /* display: none; */
 }
 
-.nav a {
-
-    /* 
-    navigation links should be padded (this only pads to the left and right and 
-    not the top and bottom because it is an inline element)
-    */
-    padding: .5em;
-
-    /* 
-    To add padding to the top and bottom or add heights, you have to make it a 
-    inline block because blocks are two dimensional while lines only have a 
-    width
-    */
-    display: inline-block;
-
-
-    color: white;
-
-    /* gets rid of the link-looking underlines */
-    text-decoration: none;
-
-}
-
-/* This is the hover selector used on the nav's anchor tags */
-.nav a:hover {
-    /* elements with this tag should have their box-model change color */
-    /* should be transparent to still view the background picture */
-    background-color: rgba(255,255,255,.3)
-}
-
-.main-nav {
-    /* main navigation should be at the center of the screen */
-    text-align: center;
-
-    /* size of text should be scaled 30% bigger than the b */
-    font-size: 1.3em;
-
-    /* font blends well with the background as opposed to bolder */
-    font-weight: lighter;
-
-    /* Adds a border bottom to section off the navigation links */
-    border-bottom: 1px solid rgba(255, 255, 255, .3)
-}
-
-.main-nav li {
-    /* 
-    navigation links should have a 5% padding so they are spaced out as the
-    window grows or shrinks
-    */
-    padding: 0 5%;
-}
 
 .main-header {
+  /* sets the background with the url function (similar to href)*/
+  background-image: url("Images/header_background.jpg");
 
-    /* sets the background with the url function (similar to href)*/
-    background-image: url("Images/header_background.jpg");
+  /* back-background color for overlaying image over*/
+  background-color: rgba(0, 0, 0, 0.6);
 
-    /* back-background color for overlaying image over*/
-    background-color: rgba(0,0,0,.6);
+  /* background blending (multiply "overlays" the images)*/
+  background-blend-mode: multiply;
 
-    /* background blending (multiply "overlays" the images)*/
-    background-blend-mode: multiply;
-
-    /*
+  /*
     background size property set to take the image and expand as much
     as possible without growing bigger than the image 
-    */ 
-    background-size: cover;
+  */
+  background-size: cover;
 
-    /*Setting the bottom padding so Title isn't sitting on top of white-space */
-    padding-bottom: 50px;
-
+  /*Setting the bottom padding so Title isn't sitting on top of white-space */
+  padding-bottom: 50px;
 }
 
-.band-name {
 
-    /* class for band name: should be centered wherever it is */
-    text-align: center;
-
-    /* heading elements like h1 all have margins: let the margins be 0 */
-    margin: 0; 
-
-    font-size: 4em;
-
-    /* changing the everything tag's font set on the heading to be different  */
-    font-family: Sound Wave;
-
-    /*
-    Since heading are by default bolded, the font-weight can be changed to 
-    normalize the bolded text
-    */
-    font-weight: normal;
-
-    /* All band names should be white */
-    color: white;
-}
-
-.band-name-large {
-    font-size: 8em;
-}
 
 .content-section {
-    /* differentiates the section from the previous header*/
-    margin: 1em;
+  /* differentiates the section from the previous header*/
+  margin: 1em;
 }
 
-.container {    
-    /* 
+.container {
+  /* 
     Sets a max width on the section, meaning if the screen grows too large it
     will not out grow 900px
     */
-    max-width: 800px;
+  max-width: 800px;
 
-    /* 
+  /* 
     margin for top and bottom set to zero
     
     auto-set the left and right margins for better fitting 
     (ie. centers the text to the screen)
     */
-    margin: 0 auto;
+  margin: 0 auto;
 
-    /* 
+  /* 
     ensures that even if the page is as small as possible there is a padding
     to prevent the text from hugging the edge
     */
-    padding: 0 1.5em;
-
+  padding: 0 1.5em;
 }
 
 .section-header {
-    /* Styles the section element with font, weight, color, position, and size */
-    font-family: Stalinist One;
-    font-weight: normal;
-    color: #333;
-    text-align: center;
-    font-size: 2.5em;
-
+  /* Styles the section element with font, weight, color, position, and size */
+  font-family: Abel;
+  font-weight: normal;
+  color: #333;
+  text-align: center;
+  font-size: 2.5em;
 }
 
-
-.about-logo-image{
-    /* 
+.about-logo-image {
+  /* 
     trying to get the page to wrap around the image...
     by using the float property, we can make the image stay left while the
     entire page wraps around it
     image removes itself from the flow and "floats" left of the page
     */
-    float: left;
+  float: left;
 
-    /* Setting the height and width of the images */
-    height: 200px;
-    width: 200px;
+  /* Setting the height and width of the images */
+  height: 200px;
+  width: 200px;
 
-    /* setting a little margin so the text doesn't hug the picture*/
-    margin: 15px;
+  /* setting a little margin so the text doesn't hug the picture*/
+  margin: 15px;
 
-    /*
+  /*
     making the image rounded so the it sticks out more
     It is a property on how far we want to curve the edges of the border
     Since the image is square, 50% is the side that is shortest, taking that 
     it will vector out a circle
     */
-    border-radius: 50%;
+  border-radius: 50%;
 
-    /* 
+  /* 
     creating a border around the circle so that the white-background image can
     be seen as a circle 
     */
-    border: 3px solid ;
+  border: 3px solid;
 }
 
 .main-footer {
-    /* Background color should be white */
-    background-color: #290133;
+  /* Background color should be white */
+  background-color: #290133;
 
-    /* Anything else should be white */
-    color: white;
+  /* Anything else should be white */
+  color: white;
 
-    /* padding should be for top and bottom */
-    padding: .25em 0;
+  /* padding should be for top and bottom */
+  padding: 0.25em 0;
 }
 
 .main-footer-container {
-    /* flex display/flex-box is a complicated display tool*/
-    display: flex;
+  /* flex display/flex-box is a complicated display tool*/
+  display: flex;
 
-    /* Vertically aligns everything in the flex-box */
-    align-items: center;
+  /* Vertically aligns everything in the flex-box */
+  align-items: center;
 }
 
 /* makes a flex-grows the list of */
 .main-footer-container ul {
-    /*
+  /*
     left element should be as small as possible (ul elements)  
     1 - means grow and push everything to the right
     */
-    flex-grow: 1;
+  flex-grow: 1;
 
-    /* should be toward the right end */
-    text-align: end;
+  /* should be toward the right end */
+  text-align: end;
 }
 
 /* footer list should have padding around*/
 .footer-nav li {
-    padding: 0 .5em;
+  padding: 0 0.5em;
 }
-
 
 /* footer navigation images ex. youtube, spotify, etc logos */
 .footer-nav img {
-    /* if images were not sized already you cn set the height and width */
-    height: 30px;
+  /* if images were not sized already you cn set the height and width */
+  height: 30px;
 }
-
-
 
 /* generic button class */
 .btn {
-    /* button should have text that is centered horizontally (usually after padding) */
-    text-align: center;
+  /* button should have text that is centered horizontally (usually after padding) */
+  text-align: center;
 
-    /* button should have text that is centered vertically (usually after padding) */
-    vertical-align: middle;
+  /* button should have text that is centered vertically (usually after padding) */
+  vertical-align: middle;
 
-    /* padding will make buttons bigger */
-    padding: .67em;
+  /* padding will make buttons bigger */
+  padding: 0.67em;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btn-header {
-    /* want to off center the header button to the left to an extent*/
-    /* if we use all 4 values of the margin property: top, right, bottom, left */
-    margin: .5em 30% 2em 15%;
+  /* want to off center the header button to the left to an extent*/
+  /* if we use all 4 values of the margin property: top, right, bottom, left */
+  margin: 0.5em 30% 2em 15%;
 
-    /* changing the look of the button: color, border, background color */
-    color: white;
-    border: 2px solid white;
-    background-color: rgba(255,255,255,.1);
+  /* changing the look of the button: color, border, background color */
+  color: white;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
 
-    /* makes sure that the this button isn't round on corners */
-    border-radius: 0;
+  /* makes sure that the this button isn't round on corners */
+  border-radius: 0;
 
-    font-size: 1.5em;
-    font-weight: lighter;
-    padding-left: 2em;
-    padding-right: 2em;
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 /* to change colors when hovered over */
 .btn-header:hover {
-    background-color: rgba(255, 255, 255, .3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-
 .play-btn {
-    display: block;
-    margin: 0 auto;
-    color:white;
-    font-size: 4em;
-    border-radius: 50%;
-    padding: 0;
-    height: 100px;
-    width: 100px;
-    
+  display: block;
+  margin: 0 auto;
+  color: white;
+  font-size: 4em;
+  border-radius: 50%;
+  padding: 0;
+  height: 100px;
+  width: 100px;
 }
 
 .tour-row {
-    border-bottom: 1px solid;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
+  border-bottom: 1px solid;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .tour-row:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .tour-item {
-    /* 
+  /* 
     To add padding to the top and bottom or add heights, you have to make it a 
     inline block because blocks are two dimensional while lines only have a 
     width
     */
- 
-   display: inline-block;
-   padding-right: .5em;
-}
 
+  display: inline-block;
+  padding-right: 0.5em;
+}
 
 /* 
 Inline block elements add a width to the block that can't be removed
@@ -370,195 +277,190 @@ subtract out an estimated portion from these widths to make sure to account for
 the block element's extra width
 */
 .tour-date {
-    color:#555;
-    font-weight: bold;
-    width: 11%;
+  color: #555;
+  font-weight: bold;
+  width: 11%;
 }
 
 .tour-city {
-    width: 24%;
+  width: 24%;
 }
 
 .tour-arena {
-    width: 42%;
+  width: 42%;
 }
 
 .tour-btn {
-    max-width: 19%;
+  max-width: 19%;
 }
 
 .btn-primary {
-    color:white;
-    background-color:#290133;
-    border: none;
-    border-radius: 0.3em;
-    font-weight: normal;
+  color: white;
+  background-color: #290133;
+  border: none;
+  border-radius: 0.3em;
+  font-weight: normal;
 }
 
 .btn-primary:hover {
-    background-color: #CF9FFF;
+  background-color: #cf9fff;
 }
 
 .shop-item {
-    margin: 30px;
+  margin: 30px;
 }
 
 .shop-item-title {
-    /* creates its own block/line rather than inline */
-    display: block;
+  /* creates its own block/line rather than inline */
+  display: block;
 
-    width: 100%;
-    text-align: center;
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .shop-item-image {
-    height: 250px;
-
+  height: 250px;
 }
 
 .shop-item-details {
-    /* want a flexbox so we can align the items inside this class vertically */
-    display: flex;
-    align-items: center;
-    padding: 5px;
+  /* want a flexbox so we can align the items inside this class vertically */
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
-
 
 .shop-item-price {
-    flex-grow: 1;
-    color: #333;
+  flex-grow: 1;
+  color: #333;
 }
 
-
 .shop-items {
-    /*
+  /*
     makes everything inside the flexbox aligned
     */
-    display: flex;
+  display: flex;
 
-    /* 
+  /* 
     everything inside the flex will wrap around if there
     is no space for it 
     */
-   flex-wrap: wrap;
+  flex-wrap: wrap;
 
-   /* making sure that there is space to the left and right*/
-   justify-content: space-around;
-
+  /* making sure that there is space to the left and right*/
+  justify-content: space-around;
 }
 
-
 .cart-header {
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #333;
 }
 
 .cart-column {
-    /* vertically spacing the columns in the middle (equally)*/
-    display: flex;
-    align-items: center;
+  /* vertically spacing the columns in the middle (equally)*/
+  display: flex;
+  align-items: center;
 
-    /* drawing a line to separate the heading from the rest of the column */
-    border-bottom: 1px solid black;
+  /* drawing a line to separate the heading from the rest of the column */
+  border-bottom: 1px solid black;
 
-    /* margins to separate the columns from each other */
-    margin-right: 1.5em;
+  /* margins to separate the columns from each other */
+  margin-right: 1.5em;
 
-    /* seperating items in a column */
-    padding-bottom: 10px;
+  /* seperating items in a column */
+  padding-bottom: 10px;
 
-    /* separating the column from everything above it */
-    margin-top: 10px;
+  /* separating the column from everything above it */
+  margin-top: 10px;
 }
 
 .cart-row {
-    display: flex;
+  display: flex;
 }
 
 .cart-item {
-    width: 45%;
+  width: 45%;
 }
 
 .cart-price {
-    width:20%;
-    font-size: 1.2em;
-    color: #333;
+  width: 20%;
+  font-size: 1.2em;
+  color: #333;
 }
 
 .cart-quantity {
-    width: 35%
+  width: 35%;
 }
 
 .cart-item-title {
-    color:#333;
-    margin-left: .5em;
-    font-size: 1.2em;
+  color: #333;
+  margin-left: 0.5em;
+  font-size: 1.2em;
 }
 
 .cart-item-image {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
-    border: solid #333;
+  width: 75px;
+  height: auto;
+  border-radius: 10px;
+  border: solid #333;
 }
 
 .btn-danger {
-    color:white;
-    background-color: #EB5757;
-    border: none;
-    font-weight: bold;
-    border-radius: 10px;
+  color: white;
+  background-color: #eb5757;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .btn-danger:hover {
-    background-color: #CC4C4C;
+  background-color: #cc4c4c;
 }
 
 .cart-quantity-input {
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    border: 1px solid;
-    background-color: #eee;
-    color: #333;
-    padding: 0;
-    text-align: center;
-    font-size: 1.1em;
+  height: 34px;
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: #eee;
+  color: #333;
+  padding: 0;
+  text-align: center;
+  font-size: 1.1em;
 }
 
 .cart-row:last-child {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .cart-row:last-child .cart-column {
-    border: none;
+  border: none;
 }
 
 .cart-total {
-    text-align: end;
-    margin-top:10px;
-    margin-right: 10px;
+  text-align: end;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
-    margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
 .cart-total-price {
-    color: #333;
-    font-size: 1.1em;
+  color: #333;
+  font-size: 1.1em;
 }
 
 .btn-purchase {
-    display: block;
-    margin: 40px auto 80px auto;
-    font-size: 1.75em;
+  display: block;
+  margin: 40px auto 80px auto;
+  font-size: 1.75em;
 }

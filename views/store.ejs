@@ -1,178 +1,187 @@
-
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <!-- title of the page when searched and in the tab-->
+    <title>Arte - Store</title>
 
-    <head>
-
-        <!-- title of the page when searched and in the tab-->
-        <title>Arte - Store</title>
-
-        <!-- description of the page when searched for in -->
-        <!-- google search results -->
-        <meta name="description" 
-              content="At Arte, we celebrate diversity and 
+    <!-- description of the page when searched for in -->
+    <!-- google search results -->
+    <meta
+      name="description"
+      content="At Arte, we celebrate diversity and 
                        individuality. Our clothing empowers you to express
                        your unique personality and make a bold statement without
                        saying a word. Whether you're dressing for a special 
                        occasion or expressing your daily creativity, we've got 
-                       you covered.">
-        
-        <link href="styles.css" rel="stylesheet">
+                       you covered."
+    />
 
-        <!-- stripe implementation -->
-        <!-- must defer to let the check out script load first-->
-        <script src="https://checkout.stripe.com/checkout.js" defer></script>
-        
-        <script>
-            var stripePublicKey = "<%=stripePublicKey%>";
-        </script>
+    <link href="styles.css" rel="stylesheet" defer />
+    <link rel="stylesheet" href="nav.css" defer />
 
-        <!-- 
+    <!-- stripe implementation -->
+    <!-- must defer to let the check out script load first-->
+    <script src="https://checkout.stripe.com/checkout.js" defer></script>
+
+    <script>
+      var stripePublicKey = "<%=stripePublicKey%>";
+    </script>
+
+    <!-- 
             Script Tag to import javascript
             Since nothing else renders until the javascript file is entered, it is a problem
             Solution: include async attribute - tells browser to download store.js in
             background and continue to download body at the same time
-        -->
-        <script src="store.js" defer></script>
+    -->
+    <script src="store.js" defer></script>
+  </head>
 
-    </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
 
-    <body>
-
-        <header class="main-header">
-
-
-            <!--navigation area: can have multiple of these in a single page-->
-            <nav class="nav main-nav">
-                <!-- unordered list also can have ordered list (ol) -->
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="store">STORE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                </ul>
-            </nav>
-
-            <!--heading elements range from 1-6 from largest to smallest-->
-            <h1 class="band-name band-name-large">Arte</h1>
-
-
-
+        <header>
+            <div class="web-nav">
+                <nav class="main-nav">
+                    <!-- unordered list also can have ordered list (ol) -->
+                    <div class="brand-container">
+                        <div class="logo"><a href="/">Arte</a></div>
+                        <div class="slogan">premium denim jacket | art on the go | made in ny</div>
+                    </div>
+                    <div class="connections">
+                        <ul class="navbar-links">
+                            <li><a href="/store">STORE</a></li>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="reviews.html">REVIEWS</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                        <div class="socials">
+                            <a href=""><img src="Images/Socials/Instagram.png" width="20px" style="filter: invert(100%)"/></a>
+                            <a href=""><img src="Images/Socials/pinterest.png" width="20px"/></a>
+                            <a href="mailto:thomaa2031@gmail.com"><img src="Images/Socials/email.png" width="20px"/></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </header>
 
+        <div class="mobile-nav">
+          <nav class="side-nav"></nav>
+        </div>
 
 
         <!-- section element to partition related elements-->
 
         <section class="content-section container">
+          <h2 class="section-header">Collection</h2>
 
-            <h2 class="section-header">ART</h2>
+          <!-- divided sections for all music -->
+          <div class="shop-items">
+            <!-- 
+                            Loop through all the store items data 
+                            and render html components before sending to the user
+                            item holds the data for each item in the array
+                        -->
+            <% items.music.forEach( function(item) { %>
 
-            <!-- divided sections for all music -->
-            <div class="shop-items">
-                <!-- 
-                    Loop through all the store items data 
-                    and render html components before sending to the user
-                    item holds the data for each item in the array
-                -->
-                <% items.music.forEach( function(item) {  %>
-
-                    <div class="shop-item" data-item-id = "<%= item.id %>">
-                        <!-- divided sections for Album Info -->
-                        <span class="shop-item-title"> <%= item.name %> </span>
-                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
-                        <div class="shop-item-details">
-                            <span class="shop-item-price"><%= item.price / 100 %></span>
-                            <button class="btn btn-primary shop-item-button" role="button">ADD TO CART</button>
-                        </div>
-                    </div>
-
-                <% }) %>
+            <div class="shop-item" data-item-id="<%= item.id %>">
+              <!-- divided sections for Album Info -->
+              <span class="shop-item-title"> <%= item.name %> </span>
+              <img class="shop-item-image" src="Images/Products/<%= item.imgName %>" />
+              <div class="shop-item-details">
+                <span class="shop-item-price"><%= item.price / 100 %></span>
+                <button class="btn btn-primary shop-item-button" role="button">
+                  ADD TO CART
+                </button>
+              </div>
             </div>
-        </section>
 
-
-
-        <section class="content-section container">
-
-            <h2 class="section-header">MERCH</h2>
-
-            <div class="shop-items">
-
-
-                <!-- 
-                    Loop through all the merch item data 
-                    and render html components before sending to the user
-                    merch item holds the data for each merch in the array
-                -->
-                <% items.merch.forEach(function(item){  %>
-                    <div class="shop-item" data-item-id = "<%= item.id %>">
-                        <!-- divided sections for Album Info -->
-                        <span class="shop-item-title"> <%= item.name %> </span>
-                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
-                        <div class="shop-item-details">
-                            <span class="shop-item-price"><%= item.price / 100 %></span>
-                            <button class="btn btn-primary shop-item-button" role="button">ADD TO CART</button>
-                        </div>
-                    </div>
-                <% }) %>
-
-
-            </div> 
-
+            <% }) %>
+          </div>
         </section>
 
         <section class="content-section container">
+          <h2 class="section-header">MERCH</h2>
 
-            <h2 class="section-header">CART</h2>
-
-            <!-- Headings For Item Info  -->
-            <div class="cart-row">
-                <span class = "cart-item cart-header cart-column">ITEM</span>
-                <span class = "cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+          <div class="shop-items">
+            <!-- 
+                            Loop through all the merch item data 
+                            and render html components before sending to the user
+                            merch item holds the data for each merch in the array
+                        -->
+            <% items.merch.forEach(function(item){ %>
+            <div class="shop-item" data-item-id="<%= item.id %>">
+              <!-- divided sections for Album Info -->
+              <span class="shop-item-title"> <%= item.name %> </span>
+              <img class="shop-item-image" src="Images/Products/<%= item.imgName %>" />
+              <div class="shop-item-details">
+                <span class="shop-item-price"><%= item.price / 100 %></span>
+                <button class="btn btn-primary shop-item-button" role="button">
+                  ADD TO CART
+                </button>
+              </div>
             </div>
-
-            <div class = "cart-items">
-            </div>
-
-            <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
-            </div>
-
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-    
+            <% }) %>
+          </div>
         </section>
 
+        <section class="content-section container">
+          <h2 class="section-header">CART</h2>
 
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-                <h3 class = "band-name"> Arte </h3>
-                <ul class="nav footer-nav">
-                    <li>
-                        <a href="https://www.youtube.com/channel/UCuXSuzae1gH6HCu9oUE9Z3g/featured">
-                            <img src="Images/Youtube.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://open.spotify.com/user/bowow_0923?si=6fedad7e452a4646">
-                            <img src="Images/Spotify.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://soundcloud.com/bowow2478">
-                            <img src="Images/Sound Cloud.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/bowow_0923/">
-                            <img src="Images/Instagram.png">
-                        </a>
-                    </li>
-                </ul>
-            </div>
+          <!-- Headings For Item Info  -->
+          <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+          </div>
+
+          <div class="cart-items"></div>
+
+          <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+          </div>
+
+          <button class="btn btn-primary btn-purchase" type="button">
+            PURCHASE
+          </button>
+        </section>
+
+        <footer>
+          <div class="container main-footer-container">
+            <h3 class="band-name">Arte</h3>
+            <ul class="nav footer-nav">
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCuXSuzae1gH6HCu9oUE9Z3g/featured"
+                >
+                  <img src="Images/Socials/Youtube.png" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://open.spotify.com/user/bowow_0923?si=6fedad7e452a4646"
+                >
+                  <img src="Images/Socials/Spotify.png" />
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/bowow2478">
+                  <img src="Images/Socials/Sound Cloud.png" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/bowow_0923/">
+                  <img src="Images/Socials/Instagram.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </footer>
 
-    </body>
+        
+      </div>
+    </div>
+  </body>
 </html>

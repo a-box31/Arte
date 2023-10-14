@@ -1,0 +1,121 @@
+/* LOGO FONT STYLE IMPORT */
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Slabo+27px&display=swap");
+
+@font-face {
+  font-family: GrandHotel;
+  src: url("Fonts/GrandHotel.ttf");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+.web-nav {
+  /* background-color: bisque; */
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 150px;
+  /* main navigation should be at the center of the screen */
+  text-align: center;
+
+  /* size of text should be scaled 30% bigger than the b */
+  font-size: 1em;
+
+  /* font blends well with the background as opposed to bolder */
+  font-weight: lighter;
+
+  /* Adds a border bottom to section off the navigation links */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  text-decoration: none;
+}
+.main-nav li {
+  /* 
+    navigation links should have a 5% padding so they are spaced out as the
+    window grows or shrinks
+    */
+  padding: 0 15px;
+}
+
+.brand-container {
+  /* background-color: aquamarine; */
+  width: 100%;
+  margin: 0 45px;
+  padding: 3px 20px;
+  letter-spacing: 2px;
+}
+
+.logo {
+  /* background-color: blueviolet; */
+  text-align: left;
+}
+
+.logo a {
+  font-family: GrandHotel;
+  font-weight: normal;
+  text-decoration-line: underline;
+
+  color: black;
+  font-size: 4em;
+}
+
+.slogan {
+  text-align: left;
+}
+
+.connections {
+  /* background-color: bisque; */
+  width: fit-content;
+  margin: 0 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-links {
+  /* background-color: tan; */
+  width: 100%;
+
+  display: flex;
+  justify-content: right;
+
+  list-style: none;
+  text-decoration: none;
+  font-family: Abel;
+}
+
+.navbar-links li {
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.socials {
+  text-align: center;
+  display: inline-block;
+  width: 135px;
+  /* background-color: aqua; */
+  margin: 10px 10px;
+}
+
+.socials img {
+  margin: 0 5px;
+}
+
+.mobile-nav {
+  position: fixed;
+}
+
+@media (max-width: 1000px) {
+  .connections {
+    /* background-color: bisque; */
+    width: fit-content;
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

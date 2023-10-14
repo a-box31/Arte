@@ -76,7 +76,7 @@ var stripeHandler = StripeCheckout.configure({
       // sending and requesting json
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+         "Accept": "application/json",
       },
       // sending message with id and quantity
       body: JSON.stringify({
@@ -84,22 +84,21 @@ var stripeHandler = StripeCheckout.configure({
         items: items,
       }),
     })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        
-        alert(data.message);
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      alert(data.message);
+      var cartItems = document.getElementsByClassName("cart-items")[0];
+      //removes cart items while the cart still has items in it
+      while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild);
+      }
+      updateCartTotal();
+    }).catch((err)=>{
+      console.error(err);
+    })
 
-        var cartItems = document.getElementsByClassName("cart-items")[0];
-        //removes cart items while the cart still has items in it
-        while (cartItems.hasChildNodes()) {
-          cartItems.removeChild(cartItems.firstChild);
-        }
-        updateCartTotal();
-      }).catch((err)=>{
-        console.error(err);
-      })
   },
 });
 
