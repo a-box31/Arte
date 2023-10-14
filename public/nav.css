@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
 
-  height: 150px;
+  height: 125px;
   /* main navigation should be at the center of the screen */
   text-align: center;
 
@@ -87,13 +87,30 @@
   font-family: Abel;
 }
 
-.navbar-links li {
+.navbar-links a {
   text-decoration: none;
-  margin-top: 10px;
+  font-size: 14px;
+}
+
+.navbar-links li {
+    margin-top: 10px;
+}
+
+.navbar-links li::after {
+  content: "";
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: black;
+  transition: 300ms ease-out;
+}
+
+.navbar-links li:hover::after {
+    width: 100%;
 }
 
 .socials {
-  text-align: center;
+  text-align: right;
   display: inline-block;
   width: 135px;
   /* background-color: aqua; */
@@ -101,7 +118,12 @@
 }
 
 .socials img {
-  margin: 0 5px;
+  margin: 5px 5px;
+  width: 15px;
+}
+
+.socials a {
+  text-decoration: none;
 }
 
 .mobile-nav {

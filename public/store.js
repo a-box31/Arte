@@ -201,6 +201,8 @@ function addItemToCart(title, price, imageSrc, id) {
   cartRow
     .getElementsByClassName("cart-quantity-input")[0]
     .addEventListener("change", quantityChanged);
+
+  alert("Added Item to cart");
 }
 
 //function to update the total price in the cart (helper function)

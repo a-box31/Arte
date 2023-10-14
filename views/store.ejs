@@ -19,7 +19,8 @@
     />
 
     <link href="styles.css" rel="stylesheet" defer />
-    <link rel="stylesheet" href="nav.css" defer />
+    <link href="nav.css" rel="stylesheet" defer />
+    <link href="store.css" rel="stylesheet" defer />
 
     <!-- stripe implementation -->
     <!-- must defer to let the check out script load first-->
@@ -124,40 +125,10 @@
           </button>
         </section>
 
-        <footer>
-          <div class="container main-footer-container">
-            <h3 class="band-name">Arte</h3>
-            <ul class="nav footer-nav">
-              <li>
-                <a
-                  href="https://www.youtube.com/channel/UCuXSuzae1gH6HCu9oUE9Z3g/featured"
-                >
-                  <img src="Images/Socials/Youtube.png" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://open.spotify.com/user/bowow_0923?si=6fedad7e452a4646"
-                >
-                  <img src="Images/Socials/Spotify.png" />
-                </a>
-              </li>
-              <li>
-                <a href="https://soundcloud.com/bowow2478">
-                  <img src="Images/Socials/Sound Cloud.png" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/bowow_0923/">
-                  <img src="Images/Socials/Instagram.png" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </footer>
-
+        <%- include('./partials/footer.ejs') %>
         
       </div>
     </div>
   </body>
+
 </html>
