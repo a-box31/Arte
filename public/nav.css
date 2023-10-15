@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
 
-  height: 125px;
+  height: fit-content;
   /* main navigation should be at the center of the screen */
   text-align: center;
 
@@ -60,11 +60,13 @@
   text-decoration-line: underline;
 
   color: black;
-  font-size: 4em;
+  font-size: 3.5em;
 }
 
 .slogan {
   text-align: left;
+  line-height: 2.5em;
+  font-size: 0.9em;
 }
 
 .connections {
@@ -93,7 +95,7 @@
 }
 
 .navbar-links li {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .navbar-links li::after {
@@ -106,7 +108,7 @@
 }
 
 .navbar-links li:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .socials {
@@ -139,5 +141,11 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+  }
+}
+
+@media (max-height: 800px) {
+  .slogan{
+    display: none;
   }
 }

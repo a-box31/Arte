@@ -42,6 +42,9 @@ function ready() {
     .addEventListener("click", purchaseClicked);
 }
 
+
+
+
 // Setting Up Stripe Payment Processing
 // Test mode uses 42 repeating card number, a future time, and filler elsewhere
 var stripeHandler = StripeCheckout.configure({
@@ -101,6 +104,9 @@ var stripeHandler = StripeCheckout.configure({
 
   },
 });
+
+
+
 
 //purchase clicked will remove all items and alert the user that they purchased
 function purchaseClicked() {
