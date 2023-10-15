@@ -24,7 +24,8 @@
 
     <!-- stripe implementation -->
     <!-- must defer to let the check out script load first-->
-    <script src="https://checkout.stripe.com/checkout.js" defer></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script>
       var stripePublicKey = "<%=stripePublicKey%>";
@@ -37,6 +38,7 @@
             background and continue to download body at the same time
     -->
     <script src="store.js" defer></script>
+
   </head>
   
 
@@ -60,48 +62,26 @@
                             and render html components before sending to the user
                             item holds the data for each item in the array
                         -->
-            <% items.music.forEach( function(item) { %>
+            <% products.forEach( function(item) { %>
 
-            <div class="shop-item" data-item-id="<%= item.id %>">
-              <!-- divided sections for Album Info -->
-              <span class="shop-item-title"> <%= item.name %> </span>
-              <img class="shop-item-image" src="Images/Products/<%= item.imgName %>" />
-              <div class="shop-item-details">
-                <span class="shop-item-price"><%= item.price / 100 %></span>
-                <button class="btn btn-primary shop-item-button" role="button">
-                  ADD TO CART
-                </button>
+              <div class="shop-item" data-item-id="<%= item.id %>">
+                <!-- divided sections for Album Info -->
+                <span class="shop-item-title"> <%= item.name %> </span>
+                <img class="shop-item-image" src="<%= item.images[0] %>" />
+                <div class="shop-item-details">
+                  <span class="shop-item-price"><%= item.price / 100 %></span>
+                  <button class="btn btn-primary shop-item-button" role="button">
+                    ADD TO CART
+                  </button>
+                </div>
               </div>
-            </div>
 
             <% }) %>
+
           </div>
         </section>
 
-        <section class="content-section container">
-          <h2 class="section-header">MERCH</h2>
 
-          <div class="shop-items">
-            <!-- 
-                            Loop through all the merch item data 
-                            and render html components before sending to the user
-                            merch item holds the data for each merch in the array
-                        -->
-            <% items.merch.forEach(function(item){ %>
-            <div class="shop-item" data-item-id="<%= item.id %>">
-              <!-- divided sections for Album Info -->
-              <span class="shop-item-title"> <%= item.name %> </span>
-              <img class="shop-item-image" src="Images/Products/<%= item.imgName %>" />
-              <div class="shop-item-details">
-                <span class="shop-item-price"><%= item.price / 100 %></span>
-                <button class="btn btn-primary shop-item-button" role="button">
-                  ADD TO CART
-                </button>
-              </div>
-            </div>
-            <% }) %>
-          </div>
-        </section>
 
         <section class="content-section container">
           <h2 class="section-header">CART</h2>

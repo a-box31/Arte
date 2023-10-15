@@ -8,6 +8,8 @@ if (document.readyState == "loading") {
   ready();
 }
 
+
+
 //ADD EVENT LISTENERS TO OBJECTS
 //------------------------------
 //if the event occurs, then run respective function
@@ -45,68 +47,6 @@ function ready() {
 
 
 
-// Setting Up Stripe Payment Processing
-// Test mode uses 42 repeating card number, a future time, and filler elsewhere
-var stripeHandler = StripeCheckout.configure({
-  key: stripePublicKey,
-  locale: "en",
-  token: function (token) {
-    var items = [];
-    var cartItemsContainer = document.getElementsByClassName("cart-items")[0];
-    var cartRows = cartItemsContainer.getElementsByClassName("cart-row");
-    for (var i = 0; i < cartRows.length; i++) {
-
-      var cartRow = cartRows[i];
-      // get the quantity input element
-      var quantityElement = cartRow.getElementsByClassName(
-        "cart-quantity-input"
-      )[0];
-      // set input value to instance variable
-      var quantity = quantityElement.value;
-      // set id valuse to instance variable
-      var id = cartRow.dataset.itemId;
-      // put items as object with id and quantity
-      items.push({
-        id,
-        quantity,
-      });
-    }
-
-    // Ping the server with this information -> to get routed to /purchase
-    fetch("/purchase", {
-      // post request creates new resources
-      method: "POST",
-      // sending and requesting json
-      headers: {
-        "Content-Type": "application/json",
-         "Accept": "application/json",
-      },
-      // sending message with id and quantity
-      body: JSON.stringify({
-        stripeTokenId: token.id,
-        items: items,
-      }),
-    })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      alert(data.message);
-      var cartItems = document.getElementsByClassName("cart-items")[0];
-      //removes cart items while the cart still has items in it
-      while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild);
-      }
-      updateCartTotal();
-    }).catch((err)=>{
-      console.error(err);
-    })
-
-  },
-});
-
-
-
 
 //purchase clicked will remove all items and alert the user that they purchased
 function purchaseClicked() {
@@ -117,10 +57,64 @@ function purchaseClicked() {
   // Convert from String to Float
   var price = parseFloat(priceElement.innerText.replace("$", "")) * 100;
   // Open the stripe handler and send the price
-  stripeHandler.open({
-    amount: price,
-  });
+  // stripeHandler.open({
+  //   amount: price,
+  // });
+
+
+  var items = [];
+  var cartItemsContainer = document.getElementsByClassName("cart-items")[0];
+  var cartRows = cartItemsContainer.getElementsByClassName("cart-row");
+  for (var i = 0; i < cartRows.length; i++) {
+    var cartRow = cartRows[i];
+    // get the quantity input element
+    var quantityElement = cartRow.getElementsByClassName(
+      "cart-quantity-input"
+    )[0];
+    // set input value to instance variable
+    var quantity = quantityElement.value;
+    // set id valuse to instance variable
+    var id = cartRow.dataset.itemId;
+    // put items as object with id and quantity
+    items.push({
+      id,
+      quantity,
+    });
+  }
+
+  fetch("/purchase", {
+    // post request creates new resources
+    method: "POST",
+    // sending and requesting json
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    // sending message with id and quantity
+    body: JSON.stringify({
+      items: items,
+    }),
+  })
+    .then((res) => {
+      res.json()
+      .then((data) => {
+        var cartItems = document.getElementsByClassName("cart-items")[0];
+        //removes cart items while the cart still has items in it
+        while (cartItems.hasChildNodes()) {
+          cartItems.removeChild(cartItems.firstChild);
+        }
+        updateCartTotal();
+        window.location.href = data.url;
+        alert(data.message);
+      })
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
 }
+
+
 
 //removes cart item if "remove" is clicked
 function removeCartItem(event) {

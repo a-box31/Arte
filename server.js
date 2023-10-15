@@ -9,7 +9,6 @@ const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 const PORT = 5000;
 
-// console.log(stripeSecretKey, stripePublicKey)
 
 //requiring express into a express variable
 const express = require("express");
@@ -19,6 +18,58 @@ const app = express();
 const fs = require("fs");
 // stripe middleware for payment processing
 const stripe = require("stripe")(stripeSecretKey);
+// cross platform
+const cors = require("cors");
+
+
+
+
+
+
+// function declarations
+async function createProduct( name , images, price ){
+  try{
+    const product = await stripe.products.create({
+      name: name,
+      images,
+      default_price_data: {
+        currency: 'usd',
+        unit_amount: price
+      }
+    })
+    return product;
+  }catch( err ){
+    console.log(err);
+  }
+}
+
+async function getProducts(){
+  try{  
+    const products = await stripe.products.list({
+      limit: 100
+    });
+    // console.log(products)
+    return products
+  }catch (err) {
+    console.log(err);
+  }
+}
+
+async function createCheckout( line_items ){
+  try{
+    return await stripe.checkout.sessions.create({
+      line_items,
+      mode: 'payment',
+      success_url: 'http://localhost:5000/',
+      cancel_url: 'http://localhost:5000/STORE'
+    })
+  }catch (err) {
+    console.error(err);
+  }
+}
+
+
+
 
 
 //view engine allows to embed server side code in the front end html pages
@@ -27,6 +78,11 @@ app.set("view engine", "ejs");
 app.use(express.json());
 //app front end needs to be located as a static folder: now server shows the website
 app.use(express.static("public"));
+
+app.use( cors({origin: '*'}) )
+
+
+
 
 // route the home page
 app.get("/", function (req, res) {
@@ -52,71 +108,110 @@ app.get("/CONTACT", function (req, res) {
 
 
 app.get("/STORE", function (req, res) {
-  //read the items json file, with an error function just in case
+
+  // read the items json file, with an error function just in case
   fs.readFile("items.json", function (error, data) {
     if (error) {
       //internet server error then ends the response
       res.status(500).end();
     } else {
+
       //if no error render
       //ejs store so we can use the numbers from the server in the html
       //must save as an ejs to template
       res.render("store.ejs", {
         stripePublicKey: stripePublicKey,
-
         //get the jason info and send it to the page
-        items: JSON.parse(data),
+        products: JSON.parse(data),
       });
     }
   });
+
+
 });
+
+
 
 
 
 app.post("/purchase", function (req, res) {
-  //read the items json file, with an error function just in case
+
+
+  // get the official list of products with products ids and product price id
+  // to validate the id and the price
+
+  // read the items json file, with an error function just in case
   fs.readFile("items.json", function (error, data) {
+
     if (error) {
       //internet server error then ends the response
       res.status(500).end();
     } else {
-      // get the all the items on the server
-      const itemsJson = JSON.parse(data);
-      // Connect the two arrays joining all items in the server
-      const itemsArray = itemsJson.music.concat(itemsJson.merch);
 
-      // from the request body's list of purchase items:
-      // loop through purchases and cross reference
-      // with a loop through the server list, by checking against the id
-      // if the item matches, then the total is updated
-      let total = 0;
-      req.body.items.forEach( (item) => {
-        // return the itemJson when the item id is the same as the purchase id
-        const itemJson = itemsArray.find((i) => {
-          return i.id == item.id;
+      // create cart items for stripe checkout
+      const line_items = [];
+
+      const productsJson = JSON.parse(data);
+
+      // validate checkout items with the id
+      req.body.items.forEach((checkoutItem) => {
+        // look for checkout id in the products
+        productsJson.forEach((product) => {
+          if (product.id == checkoutItem.id) {
+            // get the official price and quantity, and add to checkout list
+            line_items.push({
+              price_data: {
+                product: product.id,
+                unit_amount: product.price,
+                currency: "usd",
+              },
+              quantity: checkoutItem.quantity,
+            });  
+          }
+
         });
-        // new total is added by the found item's price and quantity
-        total += itemJson.price * item.quantity;
       });
 
-      // create a new charge on the bill from the total above
-      stripe.charges
-        // charge gets sent to stripe
-        .create({
-          amount: total,
-          source: req.body.stripeTokenId,
-          currency: "usd"
-        })
-        .then(() => {   //Promise returned to log success, return a json file back
-          console.log("Charge Successful");
-          res.json({ message: "Successful Purchased Items" });
-        }).catch(()=>{
-            console.log("Charge Failure");
-            res.status(500).end();
-        })
+      createCheckout(line_items)
+      .then( (session) => {
+        // console.log(session)
+        res.status(303)
+        res.json( {url: session.url, message: "Proceed to Checkout"} ) 
+        console.log("sent!")
+      });
+
     }
   });
 });
+
+
+
+
+// app.get("/STORE-INIT", function (req, res) {
+//   //read the items json file, with an error function just in case
+//   fs.readFile("items.json", function (error, data) {
+//     if (error) {
+//       //internet server error then ends the response
+//       res.status(500).end();
+//     } else {
+
+//       getProducts()
+//       .then((res) => {
+//         let itemsArray = JSON.parse(data);
+//         itemsArray.forEach((item) => {
+//           createProduct(item.name, item.images, item.price)
+//         })
+//       })
+//       .catch((err) => {
+//         console.error(err);
+//       });
+
+//       res.redirect("https://dashboard.stripe.com/test/products?active=true");
+//     }
+//   });
+// });
+
+
 
 app.use((req, res) => {
   res.render("error.ejs");

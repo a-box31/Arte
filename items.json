@@ -1,42 +1,38 @@
-{
-    "music":[
-        {
-            "id": 1,
-            "name": "Album 1",
-            "price": 1299,
-            "imgName": "Album_1.png"
-        },
-        {
-            "id": 2,
-            "name": "Album 2",
-            "price": 1499,
-            "imgName": "Album_2.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Album 3",
-            "price": 999,
-            "imgName": "Album_3.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Album 4",
-            "price": 1999,
-            "imgName": "Album_4.jpg"
-        }
-    ],
-    "merch":[
-        {
-            "id": 5,
-            "name": "T-Shirt",
-            "price": 1299,
-            "imgName": "T_Shirt.jpg"
-        },
-        {
-            "id": 6,
-            "name": "Mug",
-            "price": 1299,
-            "imgName": "Mug.jpg"
-        }
-    ]
-}
+[
+    {
+    "id": "prod_Op8dkr11yq4Kjk",
+    "name": "Album 1",
+    "price": 1299,
+    "images": ["http://localhost:5000/Images/Products/Album_1.png"]
+    },
+    {
+    "id": "prod_Op8dGFE95ptuYT",
+    "name": "Album 2",
+    "price": 1499,
+    "images": ["http://localhost:5000/Images/Products/Album_2.jpg"]
+    },
+    {
+    "id": "prod_Op8d897Ev9AKzI",
+    "name": "Album 3",
+    "price": 999,
+    "images": ["http://localhost:5000/Images/Products/Album_3.jpg"]
+    },
+    {
+    "id": "prod_Op8dt8sWdBtAGS",
+    "name": "Album 4",
+    "price": 1999,
+    "images": ["http://localhost:5000/Images/Products/Album_4.jpg"]
+    },
+    {
+    "id": "prod_Op8dZgqKKxPEkz",
+    "name": "T-Shirt",
+    "price": 1299,
+    "images": ["http://localhost:5000/Images/Products/T_Shirt.jpg"]
+    },
+    {
+    "id": "prod_Op8dC2oUi5n197",
+    "name": "Mug",
+    "price": 1299,
+    "images": ["http://localhost:5000/Images/Products/Mug.jpg"]
+    }
+]
