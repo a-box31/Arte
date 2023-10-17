@@ -9,6 +9,8 @@ if (document.readyState == "loading") {
 }
 
 
+import Cart from '/cart.js'
+
 
 //ADD EVENT LISTENERS TO OBJECTS
 //------------------------------
@@ -42,6 +44,30 @@ function ready() {
   document
     .getElementsByClassName("btn-purchase")[0]
     .addEventListener("click", purchaseClicked);
+  
+
+
+  let cartItems = document.getElementsByClassName("cart-items")[0];
+  let rows = cartItems.getElementsByClassName("cart-row");
+  document.onvisibilitychange = () => {
+    if (document.visibilityState == "hidden") {
+      const cart = new Cart();
+
+      for (let i = 0; i < rows.length; i++) {
+        let row = rows[i];
+        let id = row.dataset.itemId;
+        let imgSrc = row.getElementsByClassName("cart-item-image")[0].src;
+        let title = row.getElementsByClassName("cart-item-title")[0].innerText;
+        let price = row.getElementsByClassName("cart-price")[0].innerText;
+        let quantity = row.getElementsByClassName("cart-quantity-input")[0].value;
+        cart.add(title, price, quantity, imgSrc, id)
+        console.log(cart)
+      }
+
+      cart.saveCartLocally();
+    }
+  }
+
 }
 
 
@@ -181,8 +207,8 @@ function addItemToCart(title, price, imageSrc, id) {
   //defining the html to go in the row
   var cartRowContents = `
         <div class = "cart-item cart-column">
-        <img class = "cart-item-image" src="${imageSrc}">
-        <span class="cart-item-title">${title}</span>
+          <img class = "cart-item-image" src="${imageSrc}">
+          <span class="cart-item-title">${title}</span>
         </div>
         <span class = "cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
@@ -203,6 +229,7 @@ function addItemToCart(title, price, imageSrc, id) {
     .addEventListener("change", quantityChanged);
 
   alert("Added Item to cart");
+
 }
 
 //function to update the total price in the cart (helper function)

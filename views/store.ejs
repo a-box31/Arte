@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
   <head>
     <!-- title of the page when searched and in the tab-->
     <title>Arte - Store</title>
@@ -37,18 +36,13 @@
             Solution: include async attribute - tells browser to download store.js in
             background and continue to download body at the same time
     -->
-    <script src="store.js" defer></script>
-
+    <script type="module" src="store.js"></script>
   </head>
-  
 
   <body>
     <div class="wrapper">
       <div class="content">
-
         <%- include('./partials/navigation.ejs')%>
-
-
 
         <!-- section element to partition related elements-->
 
@@ -64,24 +58,21 @@
                         -->
             <% products.forEach( function(item) { %>
 
-              <div class="shop-item" data-item-id="<%= item.id %>">
-                <!-- divided sections for Album Info -->
-                <span class="shop-item-title"> <%= item.name %> </span>
-                <img class="shop-item-image" src="<%= item.images[0] %>" />
-                <div class="shop-item-details">
-                  <span class="shop-item-price"><%= item.price / 100 %></span>
-                  <button class="btn btn-primary shop-item-button" role="button">
-                    ADD TO CART
-                  </button>
-                </div>
+            <div class="shop-item" data-item-id="<%= item.id %>">
+              <!-- divided sections for Album Info -->
+              <span class="shop-item-title"> <%= item.name %> </span>
+              <img class="shop-item-image" src="<%= item.images[0] %>" />
+              <div class="shop-item-details">
+                <span class="shop-item-price"><%= item.price / 100 %></span>
+                <button class="btn btn-primary shop-item-button" role="button">
+                  ADD TO CART
+                </button>
               </div>
+            </div>
 
             <% }) %>
-
           </div>
         </section>
-
-
 
         <section class="content-section container">
           <h2 class="section-header">CART</h2>
@@ -106,9 +97,7 @@
         </section>
 
         <%- include('./partials/footer.ejs') %>
-        
       </div>
     </div>
   </body>
-
 </html>
