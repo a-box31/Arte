@@ -51,8 +51,7 @@ function ready() {
   let cart = getCartFromLocal()
   if( cart.length > 0 ) {
     cart.forEach((item) => {
-      console.log(item)
-      addItemToCart(item.title, item.price, item.imageSrc, item.id, item.quantity)
+      addItemToCart(item.title, item.price, item.imgSrc, item.id, item.quantity)
     });
     updateCartTotal();
   }
@@ -72,6 +71,7 @@ function ready() {
         let quantity = row.getElementsByClassName("cart-quantity-input")[0].value;
         cart.add(title, price, quantity, imgSrc, id)
         console.log(cart)
+
       }
 
       cart.saveCartLocally();
@@ -200,7 +200,7 @@ function addItemToCart(title, price, imageSrc, id, quantity) {
 
   let quantityMax = quantity || 1
 
-  console.log(imageSrc)
+  console.log("Added item from session storage - url: " + imageSrc);
 
   //creates a new div element with needed classes added
   var cartRow = document.createElement("div");
