@@ -20,5 +20,5 @@ export default class Cart{
 }
 
 export function getCartFromLocal(){
-    return JSON.parse(localStorage.getItem('Arte-Cart'))
+    return JSON.parse(localStorage.getItem('Arte-Cart')) || [] ;
 }

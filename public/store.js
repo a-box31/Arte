@@ -1,4 +1,6 @@
 //First Javascript implementation
+import Cart, { getCartFromLocal } from "/cart.js";
+
 
 //Adds an event listener for when the webpage is finished loading
 if (document.readyState == "loading") {
@@ -9,7 +11,6 @@ if (document.readyState == "loading") {
 }
 
 
-import Cart from '/cart.js'
 
 
 //ADD EVENT LISTENERS TO OBJECTS
@@ -44,8 +45,17 @@ function ready() {
   document
     .getElementsByClassName("btn-purchase")[0]
     .addEventListener("click", purchaseClicked);
-  
 
+
+  
+  let cart = getCartFromLocal()
+  if( cart.length > 0 ) {
+    cart.forEach((item) => {
+      console.log(item)
+      addItemToCart(item.title, item.price, item.imageSrc, item.id, item.quantity)
+    });
+    updateCartTotal();
+  }
 
   let cartItems = document.getElementsByClassName("cart-items")[0];
   let rows = cartItems.getElementsByClassName("cart-row");
@@ -186,7 +196,12 @@ function addToCartClicked(event) {
 }
 
 //takes menu item info and creates a cart item
-function addItemToCart(title, price, imageSrc, id) {
+function addItemToCart(title, price, imageSrc, id, quantity) {
+
+  let quantityMax = quantity || 1
+
+  console.log(imageSrc)
+
   //creates a new div element with needed classes added
   var cartRow = document.createElement("div");
   cartRow.classList.add("cart-row");
@@ -212,7 +227,7 @@ function addItemToCart(title, price, imageSrc, id) {
         </div>
         <span class = "cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
+            <input class="cart-quantity-input" type="number" value="${quantityMax}">
             <button class="btn btn-danger" role="button">REMOVE</button>
         </div>`;
 
@@ -228,9 +243,14 @@ function addItemToCart(title, price, imageSrc, id) {
     .getElementsByClassName("cart-quantity-input")[0]
     .addEventListener("change", quantityChanged);
 
-  alert("Added Item to cart");
+  if( !quantity )
+    alert("Added Item to cart");
+
 
 }
+
+
+
 
 //function to update the total price in the cart (helper function)
 function updateCartTotal() {
