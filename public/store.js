@@ -56,6 +56,7 @@ function ready() {
     updateCartTotal();
   }
 
+
   let cartItems = document.getElementsByClassName("cart-items")[0];
   let rows = cartItems.getElementsByClassName("cart-row");
   document.onvisibilitychange = () => {
@@ -96,6 +97,11 @@ function purchaseClicked() {
   // stripeHandler.open({
   //   amount: price,
   // });
+
+  if( !price ){
+    alert("Add Items to Purchase");
+    return;
+  }
 
 
   var items = [];
@@ -199,9 +205,7 @@ function addToCartClicked(event) {
 function addItemToCart(title, price, imageSrc, id, quantity) {
 
   let quantityMax = quantity || 1
-
-  console.log("Added item from session storage - url: " + imageSrc);
-
+  
   //creates a new div element with needed classes added
   var cartRow = document.createElement("div");
   cartRow.classList.add("cart-row");
