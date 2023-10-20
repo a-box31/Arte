@@ -71,8 +71,6 @@ function ready() {
         let price = row.getElementsByClassName("cart-price")[0].innerText;
         let quantity = row.getElementsByClassName("cart-quantity-input")[0].value;
         cart.add(title, price, quantity, imgSrc, id)
-        console.log(cart)
-
       }
 
       cart.saveCartLocally();
@@ -93,11 +91,8 @@ function purchaseClicked() {
   var priceElement = document.getElementsByClassName("cart-total-price")[0];
   // Convert from String to Float
   var price = parseFloat(priceElement.innerText.replace("$", "")) * 100;
-  // Open the stripe handler and send the price
-  // stripeHandler.open({
-  //   amount: price,
-  // });
 
+  // check if anything is in the cart before purchasing
   if( !price ){
     alert("Add Items to Purchase");
     return;

@@ -154,6 +154,18 @@ body {
 }
 
 
+.btn-primary {
+  color: white;
+  background-color: #290133;
+  border: none;
+  border-radius: 0.3em;
+  font-weight: normal;
+}
+
+.btn-primary:hover {
+  background-color: #6700cd;
+}
+
 
 
 footer {

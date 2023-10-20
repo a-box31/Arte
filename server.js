@@ -151,12 +151,20 @@ app.post("/purchase", function (req, res) {
                 });
             });
 
-            createCheckout(line_items).then((session) => {
-                // console.log(session)
+            createCheckout(line_items)
+            .then((session) => {
+                if(!session){
+                    res.status(500)
+                    res.json({ url: 'http://localhost:5000/Error'})
+                    return new Error("Item not found in products list");
+                }
                 res.status(303);
                 res.json({ url: session.url, message: "Proceed to Checkout" });
                 console.log("sent!");
-            });
+            })
+            .catch( (err) => { 
+                console.error(err);
+            })
         }
     });
 });
