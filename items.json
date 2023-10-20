@@ -37,38 +37,38 @@
     },
     {
     "id": "test_Op8dC2oUi5n197",
-    "name": "IMG_7837",
+    "name": "The Kiss",
     "price": 1299,
-    "images": ["http://localhost:5000/Images/Products/IMG_7837.JPG"]
+    "images": ["http://localhost:5000/Images/Products/The_Kiss.JPG"]
     },
     {
     "id": "test_Op8dC2oUi5n197",
-    "name": "IMG_7838",
+    "name": "Kanagawa",
     "price": 1299,
-    "images": ["http://localhost:5000/Images/Products/IMG_7838.JPG"]
+    "images": ["http://localhost:5000/Images/Products/Kanagawa.JPG"]
     },
     {
     "id": "test_Op8dC2oUi5n197",
-    "name": "IMG_7842",
+    "name": "Geurnica",
     "price": 1299,
-    "images": ["http://localhost:5000/Images/Products/IMG_7842.JPG"]
+    "images": ["http://localhost:5000/Images/Products/Geurnica.JPG"]
     },
     {
     "id": "test_Op8dC2oUi5n197",
-    "name": "SFZS6497",
+    "name": "Van Gogh",
     "price": 1299,
-    "images": ["http://localhost:5000/Images/Products/SFZS6497.JPG"]
+    "images": ["http://localhost:5000/Images/Products/Van_Gogh.JPG"]
     },
     {
     "id": "test_Op8dC2oUi5n197",
-    "name": "UESR6868",
+    "name": "Sunflowers",
     "price": 1299,
-    "images": ["http://localhost:5000/Images/Products/UESR6868.JPG"]
+    "images": ["http://localhost:5000/Images/Products/Sunflowers.JPG"]
     },
     {
     "id": "test_Op8dC2oUi5n197",
-    "name": "WTIR9936",
+    "name": "Viva La Vida",
     "price": 1299,
-    "images": ["http://localhost:5000/Images/Products/WTIR9936.JPG"]
+    "images": ["http://localhost:5000/Images/Products/VivaLaVida.JPG"]
     }
 ]
