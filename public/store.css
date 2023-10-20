@@ -8,7 +8,7 @@
 }
 
 .btn-primary:hover {
-  background-color: #cf9fff;
+  background-color: #6700cd;
 }
 
 .shop-item {
@@ -166,6 +166,6 @@
 
 .btn-purchase {
   display: block;
-  margin: 40px auto 80px auto;
+  margin: 40px auto 40px auto;
   font-size: 1.75em;
 }

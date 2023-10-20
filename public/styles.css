@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Slabo+27px&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 /*
 If loading from a computer:
 
@@ -151,47 +153,20 @@ body {
   border: 3px solid;
 }
 
-.main-footer {
-  /* Background color should be white */
-  background-color: #290133;
 
-  /* Anything else should be white */
-  color: white;
 
-  /* padding should be for top and bottom */
-  padding: 0.25em 0;
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
 }
 
-.main-footer-container {
-  /* flex display/flex-box is a complicated display tool*/
-  display: flex;
 
-  /* Vertically aligns everything in the flex-box */
-  align-items: center;
-}
 
-/* makes a flex-grows the list of */
-.main-footer-container ul {
-  /*
-    left element should be as small as possible (ul elements)  
-    1 - means grow and push everything to the right
-    */
-  flex-grow: 1;
 
-  /* should be toward the right end */
-  text-align: end;
-}
 
-/* footer list should have padding around*/
-.footer-nav li {
-  padding: 0 0.5em;
-}
 
-/* footer navigation images ex. youtube, spotify, etc logos */
-.footer-nav img {
-  /* if images were not sized already you cn set the height and width */
-  height: 30px;
-}
 
 /* generic button class */
 .btn {

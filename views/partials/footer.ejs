@@ -1,4 +1,4 @@
-<footer>
+<!-- <footer>
     <div class="container main-footer-container">
         <h3 class="band-name">Arte</h3>
         <ul class="nav footer-nav">
@@ -28,4 +28,38 @@
             </li>
         </ul>
     </div>
+</footer> -->
+
+<footer>
+    <div class="footer-content container">
+        <div class="newsletter-signup" >
+            <hr> <!-- Horizontal Line -->
+            <div class="gray-box">
+                <h3 style="font-family: 'Share Tech Mono', monospace !important;
+                           text-align: center;
+                           font-weight: normal;">
+                    Stay updated with our latest products and promotions.
+                </h3>
+                <form action="/subscribe" method="POST">
+                    <div>
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                    </div>
+                    <div>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <hr> <!-- Horizontal Line -->
+        </div>
+        <div class="copyright">
+            <p style="font-family: 'Share Tech Mono', monospace !important;">&copy; Arte 2023</p>
+        </div>
+    </div>
 </footer>
+
