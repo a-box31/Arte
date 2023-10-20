@@ -60,7 +60,7 @@ async function createCheckout( line_items ){
     return await stripe.checkout.sessions.create({
       line_items,
       mode: 'payment',
-      success_url: 'http://localhost:5000/',
+      success_url: 'http://localhost:5000/SUCCESS',
       cancel_url: 'http://localhost:5000/STORE'
     })
   }catch (err) {
@@ -134,6 +134,11 @@ app.get("/STORE", function (req, res) {
 
 
 
+app.get('/SUCCESS', function (req, res){
+  res.render("success.ejs");
+})
+
+
 app.post("/purchase", function (req, res) {
 
 
@@ -152,6 +157,10 @@ app.post("/purchase", function (req, res) {
       const line_items = [];
 
       const productsJson = JSON.parse(data);
+
+      if( !productsJson || !productsJson.length ){
+        return
+      }
 
       // validate checkout items with the id
       req.body.items.forEach((checkoutItem) => {
@@ -184,6 +193,14 @@ app.post("/purchase", function (req, res) {
   });
 });
 
+
+app.post("/subscribe", (req, res) => {
+    const email = req.body.email;
+    // Handle the email subscription logic here (e.g., store it in a database)
+    // Send a confirmation message, etc.
+    console.log(email);
+    res.redirect('')
+});
 
 
 

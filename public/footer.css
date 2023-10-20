@@ -1,0 +1,95 @@
+footer {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0000;
+}
+
+.newsletter-signup {
+    width: 100%;
+    text-align: left;
+    color: #888;
+}
+
+.news-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+.newsletter-signup form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: space-around;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.newsletter-signup input {
+    width: 100%;
+    margin: 10px 10px;
+    padding: 10px;
+    border: none;
+    background-color: #ffff;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.newsletter-signup button {
+    background-color: #290133;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter-signup button:hover {
+    background-color: #6700cd;
+}
+
+.copyright {
+    width: 100%;
+    color: black;
+    margin-bottom: 50px;
+    text-align: right;
+}
+
+.gray-box {
+    background-color: #eeeeee;
+    height: fit-content;
+    padding: 50px 10px;
+    margin: 20px auto;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #aaaa;
+    margin: 20px 0;
+}
+
+/* Media query to make the form full-width on smaller screens */
+@media (max-width: 768px) {
+
+.newsletter-signup form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* background-color: red; */
+}
+
+}

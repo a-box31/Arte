@@ -142,10 +142,10 @@ function purchaseClicked() {
       .then((data) => {
         var cartItems = document.getElementsByClassName("cart-items")[0];
         //removes cart items while the cart still has items in it
-        while (cartItems.hasChildNodes()) {
-          cartItems.removeChild(cartItems.firstChild);
-        }
-        updateCartTotal();
+        // while (cartItems.hasChildNodes()) {
+        //   cartItems.removeChild(cartItems.firstChild);
+        // }
+        // updateCartTotal();
         window.location.href = data.url;
         alert(data.message);
       })
@@ -205,7 +205,7 @@ function addToCartClicked(event) {
 function addItemToCart(title, price, imageSrc, id, quantity) {
 
   let quantityMax = quantity || 1
-  
+
   //creates a new div element with needed classes added
   var cartRow = document.createElement("div");
   cartRow.classList.add("cart-row");

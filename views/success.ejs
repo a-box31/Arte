@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Purchase Success</title>
+    <meta name="description" content="Your purchase was successful. Thank you!" />
+    <link href="styles.css" rel="stylesheet" defer/>
+    <link href="nav.css" rel="stylesheet" defer/>
+    <link href="store.css" rel="stylesheet" defer/>
+    <link href="footer.css" rel="stylesheet" defer>
+    <script href="success.js" type="module" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <%- include('./partials/navigation.ejs') %>
+        <section class="content-section container">
+          <h2 class="section-header">Purchase Successful</h2>
+          <div class="content-section">
+            <p>Your purchase has been successfully completed. Thank you for shopping with us!</p>
+          </div>
+          <div class="content-section">
+            <p>Order Details:</p>
+            <ul>
+              <li>Order Number: 12345</li>
+              <li>Order Date: October 19, 2023</li>
+              <li>Total Amount: $100.00</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <p>Shipping Information:</p>
+            <ul>
+              <li>Shipping Address: 123 Main St, Your City</li>
+              <li>Estimated Delivery Date: October 25, 2023</li>
+            </ul>
+          </div>
+          <div class="content-section">
+            <p>For any inquiries or issues with your order, please contact our customer support.</p>
+          </div>
+          <!-- Return to Homepage Button -->
+          <div class="content-section">
+            <a href="/" class="btn btn-primary">Return to Homepage</a>
+            <a href="/CONTACT" class="btn btn-primary">Contact Us</a>
+          </div>
+        </section>
+        <%- include('./partials/footer.ejs') %>
+      </div>
+    </div>
+  </body>
+</html>

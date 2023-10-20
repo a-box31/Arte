@@ -6,6 +6,10 @@ export default class Cart{
         this.add = (title, price, quantity, imgSrc, id) =>{
             this.cart.push({title, price, quantity, imgSrc, id});
         }
+        this.checkout = () => {
+            this.cart.removeAll();
+            localStorage.removeItem("Arte-Cart");
+        }
         this.getTotal = () =>{
             let total = 0;
             this.cart.forEach( (item) =>{
