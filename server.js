@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 //process, environment keys
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
+const elasticEncryptedKey = process.env.ELASTIC_ENCRYPTED_KEY;
 const PORT = 5000;
 
 //requiring express into a express variable
@@ -88,7 +89,7 @@ app.get("/FAQS", function (req, res) {
 // route the contacts page
 app.get("/CONTACT", function (req, res) {
     //read the items json file, with an error function just in case
-    res.render("contact.ejs");
+    res.render("contact.ejs", { elasticEncryptedKey });
 });
 
 app.get("/STORE", function (req, res) {
@@ -175,7 +176,7 @@ app.post("/subscribe", (req, res) => {
     // Handle the email subscription logic here (e.g., store it in a database)
     // Send a confirmation message, etc.
     console.log(email);
-    res.redirect("");
+    res.redirect("/Error");
 });
 
 // app.get("/STORE-INIT", function (req, res) {
