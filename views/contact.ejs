@@ -155,24 +155,22 @@
          */
         function sendEmail() {
             Email.send({
-                Host: "smtp25.elasticemail.com",
-                Username: "abint.3131@gmail.com",
-                Password: "5B2386071A0CEC9CBB14A15E45CA497A1F23",
+                SecureToken : "<%= elasticEncryptedKey %>",
                 To: "thomaa2031@gmail.com",
                 From: "abint.3131@gmail.com",
                 Subject: document.getElementById("subject").value,
                 Body:
-                    "FROM: " +
-                    document.getElementById("firstName").value +
-                    " " +
-                    document.getElementById("lastName").value +
-                    "<br/>" +
-                    "EMAIL" +
-                    document.getElementById("email").value +
-                    "<br/>" +
+                    "EMAIL: " +
+                        document.getElementById("email").value + "<br/>" +
                     "<hr/>" +
-                    document.getElementById("message").value,
-            }).then((message) => alert(message));
+                        document.getElementById("message").value + '<br/>' +
+                    "Sincerely, " + '<br/>' +
+                        document.getElementById("firstName").value + " " +
+                        document.getElementById("lastName").value
+            })
+            .then(()=>{ alert('Message Was Sent!') })
+            //.then((message) => alert(message));
+            .catch((error) => alert(error));
         }
     </script>
 </html>
