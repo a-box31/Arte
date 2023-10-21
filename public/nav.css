@@ -29,7 +29,7 @@
   font-weight: lighter;
 
   /* Adds a border bottom to section off the navigation links */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
 
   text-decoration: none;
 }
@@ -60,6 +60,7 @@
   text-decoration-line: underline;
 
   color: black;
+  color: rgb(86, 0, 86);
   font-size: 3.5em;
 }
 
