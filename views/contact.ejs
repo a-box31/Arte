@@ -1,98 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Contact Us</title>
-      <link rel="stylesheet" href="nav.css" defer>
-      <link rel="stylesheet" href="styles.css" defer>
-      <link rel="stylesheet" href="footer.css" defer>
-      <link rel="stylesheet" href="contact.css" defer>
-  </head>
-  <body>
-      <div class="wrapper">
-          <div class="content">
-              <!-- Include the navigation bar -->
-              <%- include('./partials/navigation.ejs')%>
-              <div class="spacer">
-                  <h1>WRITE TO US!</h1>
-              </div>
-              <hr>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="nav.css" defer />
+        <link rel="stylesheet" href="styles.css" defer />
+        <link rel="stylesheet" href="footer.css" defer />
+        <link rel="stylesheet" href="contact.css" defer />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="content">
+                <!-- Include the navigation bar -->
+                <%- include('./partials/navigation.ejs')%>
 
-              <!-- ... previous code ... -->
+                <div class="spacer container">
+                    <hr>
+                    <h1>WRITE TO US!</h1>
+                    <hr>
+                </div>
 
-              <!-- Contact Content -->
-              <div class="contact-content">
-                  <h2>WE’D LOVE TO HEAR FROM YOU</h2>
+                <div class="box-content container">
+                    <!-- Contact Content -->
+                    <div class="contact-content">
+                        <h2 style="font-family: 'Share Tech Mono', monospace">
+                            WE’D LOVE TO HEAR FROM YOU
+                        </h2>
 
-                  <p><i><strong>Arte</strong> would love to help answer any questions you may have.</i></p>
+                        <p
+                            style="
+                                font-family: 'Share Tech Mono', monospace;
+                                margin: 25px 0;
+                                font-size: 15px
+                            "
+                        >
+                            ARTE would love to help answer any questions you may
+                            have.
+                        </p>
 
-                  <p>Send us an email, and we’ll get back to you shortly. Also, make sure to follow us on Instagram and like our Facebook page for updates and happenings (which is a rare sight since we are just too busy making stuff)!</p>
-                  <p>Consumer and press inquiries alike can best be answered via email.</p>
+                        <p>
+                            Send us an email, and we’ll get back to you shortly.
+                            Also, make sure to follow us on Instagram and like
+                            our Facebook page for updates and happenings (which
+                            is a rare sight since we are just too busy making
+                            stuff)!
+                        </p>
+                        <p>
+                            Consumer and press inquiries alike can best be
+                            answered via email.
+                        </p>
 
-                  <hr>
+                        <hr />
 
-                  <p>Email: <a href="mailto:hi@bowoonyc.com">hi@bowoonyc.com</a></p>
-                  <p>Facebook: <a href="https://www.facebook.com/bowoonyc">facebook/bowoonyc</a></p>
-                  <p>Instagram: <a href="https://www.instagram.com/bowoonyc">instagram.com/bowoonyc</a></p>
-              </div>
+                        <p>
+                            Email:
+                            <a href="mailto:hi@bowoonyc.com">hi@bowoonyc.com</a>
+                        </p>
+                        <p>
+                            Facebook:
+                            <a href="https://www.facebook.com/bowoonyc"
+                                >facebook/bowoonyc</a
+                            >
+                        </p>
+                        <p>
+                            Instagram:
+                            <a href="https://www.instagram.com/bowoonyc"
+                                >instagram.com/bowoonyc</a
+                            >
+                        </p>
+                    </div>
 
-              <div class="contact-form">
-                  <h2>Contact Form</h2>
-                  <form onsubmit="sendEmail(); reset(); return false;">
-                      <b>(All fields are required)</b>
-                      <div>
-                          <div>
-                              <label for="firstName">First Name</label>
-                              <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                          </div>
-                          <div>
-                              <label for="lastName">Last Name</label>
-                              <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                          </div>
-                      </div>
+                    <div class="contact-form">
+                        <h2
+                            style="
+                                font-family: 'Share Tech Mono', monospace;
+                                color: grey;
+                            "
+                        >
+                            Leave Us a Message
+                        </h2>
+                        <form onsubmit="sendEmail(); reset(); return false;">
+                            <b>(All fields are required)</b>
+                            <div class="name-field">
+                                <div>
+                                    <label for="firstName">First Name</label>
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        name="firstName"
+                                        placeholder="First Name"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label for="lastName">Last Name</label>
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        name="lastName"
+                                        placeholder="Last Name"
+                                        required
+                                    />
+                                </div>
+                            </div>
 
-                      <label for="email">Email Address</label>
-                      <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter Your Email Address"
+                                required
+                            />
 
-                      <label for="subject">Subject</label>
-                      <input type="text" id="subject" name="subject" placeholder="Enter the Subject" required>
+                            <label for="subject">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="Enter the Subject"
+                                required
+                            />
 
-                      <label for="message">Message</label>
-                      <textarea id="message" name="message" rows="4" placeholder="Enter a Message" required></textarea>
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                placeholder="Enter a Message"
+                                required
+                            ></textarea>
 
-                      <button type="submit" class="btn-primary">Submit</button>
-                  </form>
-              </div>
+                            <button type="submit" class="btn-primary">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
 
-              <!-- ... rest of your code ... -->
+                <!-- ... rest of your code ... -->
 
-              <!-- Include the footer -->
-              <%- include('./partials/footer.ejs')%>
-          </div>
-      </div>
-  </body>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script>
-    /*
-     * Email is sent from the SMTP server made with the User name account
-     * The email is then proxied through the SMTP server and sent to the
-     * Intended Messag
-    */
-    function sendEmail(){
-      Email.send({
-          Host : "smtp25.elasticemail.com",
-          Username : "abint.3131@gmail.com",
-          Password : "5B2386071A0CEC9CBB14A15E45CA497A1F23",
-          To : 'thomaa2031@gmail.com',
-          From : 'abint.3131@gmail.com',
-          Subject : document.getElementById('subject').value,
-          Body : "FROM: "+ document.getElementById('firstName').value + " " + document.getElementById('lastName').value+"<br/>"+
-                 "EMAIL"+ document.getElementById('email').value + '<br/>' + '<hr/>' +
-                 document.getElementById('message').value
-      }).then(
-        (message) => alert(message)
-      );
-    }
-  </script>
+                <!-- Include the footer -->
+                <%- include('./partials/footer.ejs')%>
+            </div>
+        </div>
+    </body>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        /*
+         * Email is sent from the SMTP server made with the User name account
+         * The email is then proxied through the SMTP server and sent to the
+         * Intended Messag
+         */
+        function sendEmail() {
+            Email.send({
+                Host: "smtp25.elasticemail.com",
+                Username: "abint.3131@gmail.com",
+                Password: "5B2386071A0CEC9CBB14A15E45CA497A1F23",
+                To: "thomaa2031@gmail.com",
+                From: "abint.3131@gmail.com",
+                Subject: document.getElementById("subject").value,
+                Body:
+                    "FROM: " +
+                    document.getElementById("firstName").value +
+                    " " +
+                    document.getElementById("lastName").value +
+                    "<br/>" +
+                    "EMAIL" +
+                    document.getElementById("email").value +
+                    "<br/>" +
+                    "<hr/>" +
+                    document.getElementById("message").value,
+            }).then((message) => alert(message));
+        }
+    </script>
 </html>

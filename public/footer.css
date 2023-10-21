@@ -56,7 +56,7 @@ footer {
 }
 
 .newsletter-signup button:hover {
-    background-color: #6700cd;
+    background-color: purple;
 }
 
 .copyright {
@@ -80,7 +80,7 @@ hr {
 }
 
 /* Media query to make the form full-width on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 858px) {
 
 .newsletter-signup form {
     display: flex;

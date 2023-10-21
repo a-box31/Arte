@@ -1,85 +1,108 @@
-      .spacer {
-          height: 150px;
-          margin: 20px 0;
-          background-color: #f4f4f4;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-      }
+.box-content {
+    display: flex;
+}
 
-      .spacer h1 {
-          font-size: 36px;
-          color: #333;
-          margin-bottom: 20px; /* Adjust the margin as needed */
-      }
+@media (max-width: 768px){
+    .box-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
-      .spacer hr {
-          width: 100%;
-          border: 1px solid #494949;
-      }
 
-      .content {
-          background-color: #fff;
-          border-radius: 5px;
-          padding: 20px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+.contact-content{
+    width: 100%;
+    padding: 40px;
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-      .contact-content p {
-          margin-bottom: 10px;
-          font-size: 18px;
-      }
+.contact-content hr {
+    width: 100%;
+    border: 1px solid rgb(181, 181, 181)
+}
 
-      .contact-content strong {
-          font-weight: bold;
-      }
+.contact-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
 
-      .contact-content em {
-          font-style: italic;
-      }
+.contact-content strong {
+    font-weight: bold;
+}
 
-      .contact-content a {
-          text-decoration: none;
-          color: #007BFF;
-      }
+.contact-content em {
+    font-style: italic;
+}
 
-      h1 {
-          color: #333;
-      }
+.contact-content a {
+    text-decoration: none;
+    color: purple;
+}
 
-      .contact-info, .contact-form {
-          margin-top: 20px;
-      }
+h1 {
+    color: #333;
+}
 
-      .contact-info h2, .contact-form h2 {
-          color: #555;
-      }
+.contact-info, .contact-form {
+    margin-top: 20px;
+}
 
-      .contact-info p, .contact-form label {
-          font-size: 16px;
-      }
+.contact-info h2, .contact-form h2 {
+    color: #555;
+}
 
-      .contact-form form {
-          display: flex;
-          flex-direction: column;
-      }
+.contact-info p, .contact-form label {
+    font-size: 16px;
+}
 
-      .contact-form label {
-          margin-top: 10px;
-      }
 
-      .contact-form input, .contact-form textarea {
-          padding: 10px;
-          margin: 5px 0;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-      }
 
-      .contact-form button {
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-      }
+.contact-form {
+    padding: 40px;
+    width: 100%;
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-top: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin: 5px 5px 0 0;
+    border: 1px solid #ccc;
+    /* border-radius: 5px; */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    margin: 15px 0;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.contact-form b {
+    color: purple;
+    margin: 5px 0;
+}
+
+.name-field {
+    display: flex;
+    width: 100%;
+}
