@@ -7,8 +7,8 @@ export default class Cart{
             this.cart.push({title, price, quantity, imgSrc, id});
         }
         this.checkout = () => {
-            this.cart.removeAll();
-            localStorage.removeItem("Arte-Cart");
+            if (localStorage.getItem("Arte-Cart") );
+                localStorage.removeItem("Arte-Cart");
         }
         this.getTotal = () =>{
             let total = 0;

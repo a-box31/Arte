@@ -1,5 +1,5 @@
 //First Javascript implementation
-import Cart, { getCartFromLocal } from "/cart.js";
+import Cart from "/cart.js";
 
 //Adds an event listener for when the webpage is finished loading
 if (document.readyState == "loading") {
