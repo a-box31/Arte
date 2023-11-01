@@ -55,8 +55,8 @@ async function createCheckout(line_items) {
         return await stripe.checkout.sessions.create({
             line_items,
             mode: "payment",
-            success_url: "http://localhost:5000/SUCCESS",
-            cancel_url: "http://localhost:5000/STORE",
+            success_url: "https://arte-qz7j.onrender.com/SUCCESS",
+            cancel_url: "https://arte-qz7j.onrender.com/STORE",
         });
     } catch (err) {
         console.error(err);
@@ -156,7 +156,7 @@ app.post("/purchase", function (req, res) {
             .then((session) => {
                 if(!session){
                     res.status(500)
-                    res.json({ url: 'http://localhost:5000/Error'})
+                    res.json({ url: "https://arte-qz7j.onrender.com/Error" });
                     return new Error("Item not found in products list");
                 }
                 res.status(303);
