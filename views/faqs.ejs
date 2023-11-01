@@ -6,19 +6,126 @@
     <title>Document</title>
     <link rel="stylesheet" href="nav.css" defer />
     <link rel="stylesheet" href="styles.css" defer />
-    <link rel="stylesheet" href="footer.css" defer/>    
+    <link rel="stylesheet" href="footer.css" defer/>  
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.svg"/>  
+    <style>
+      /* FAQ Section Styles */
+
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+        color: purple;
+      }
+
+      .faq-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100%;
+      }
+
+      .faq-item {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      /* Center the FAQ section on the page */
+      .centered-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+      }
+    </style>
   </head>
 
   <body>
     <div class="wrapper">
       <div class="content">
         <%- include('./partials/navigation.ejs')%>
-          <div class="spacer container">
-              <hr>
-              <h1>Questions?</h1>
-              <hr>
+        <div class="spacer container">
+            <hr>
+            <h1>Questions?</h1>
+            <hr>
+        </div>
+        
+        <div class="centered-content container">
+          <div class="faq-container">
+            <h3>Ordering and Shipping</h3>
+
+            <details class="faq-item">
+              <summary>How do I place an order?</summary>
+              <p>To place an order, simply browse our products, select the items you want, and add them to your shopping cart. Follow the checkout process to enter your shipping information and payment details. Review your order, and click "Place Order" to complete the purchase.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>What are the shipping options and costs?</summary>
+              <p>We offer various shipping options, including standard and expedited shipping. Shipping costs depend on the shipping method, your location, and the weight of the items in your order. You can see the shipping costs during the checkout process before finalizing your purchase.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>How can I track my order?</summary>
+              <p>Once your order ships, you'll receive a confirmation email with a tracking number and a link to track your package. You can also log in to your account to check the status of your order and access the tracking information.</p>
+            </details>
           </div>
-          
+
+          <div class="faq-container">
+            <h3>Returns and Refunds</h3>
+
+            <details class="faq-item">
+              <summary>What is your return policy?</summary>
+              <p>We offer a 30-day return policy. If you're not satisfied with your purchase, you can return the item(s) in their original condition for a full refund or exchange. Please review our <a href="returns-policy.html">Return Policy</a> for more details.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>How do I initiate a return?</summary>
+              <p>To initiate a return, log in to your account, go to your order history, and request a return. Follow the instructions to return the item(s) to our designated address. Once we receive the return, we will process your request for a refund or exchange.</p>
+            </details>
+          </div>
+
+          <div class="faq-container">
+            <h3>Account and Security</h3>
+
+            <details class="faq-item">
+              <summary>How can I create an account?</summary>
+              <p>Creating an account is easy. Click on the "Sign Up" or "Create an Account" link on our website. Fill in your details and set a password. Your account will allow you to track orders, save addresses, and enjoy a faster checkout experience.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>How do you protect my personal information?</summary>
+              <p>We take data security seriously. We use advanced encryption methods to protect your personal information during transmission. Your payment information is securely processed, and we do not store your credit card details. For more information, please review our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+            </details>
+          </div>
+
+          <div class="faq-container">
+            <h3>Contact and Support</h3>
+
+            <details class="faq-item">
+              <summary>How can I reach your customer support team?</summary>
+              <p>You can contact our customer support team via email at support@yourwebsite.com or by filling out our <a href="contact.html">contact form</a>. We're here to assist you with any questions or concerns you may have.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>What are your business hours?</summary>
+              <p>Our online store is open 24/7 for browsing and placing orders. Our customer support team is available to assist you during our regular business hours, which are Monday to Friday from 9:00 AM to 6:00 PM (local time).</p>
+            </details>
+          </div>
+        </div>
 
         <%- include('./partials/footer.ejs') %>
       </div>
