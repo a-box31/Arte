@@ -147,6 +147,10 @@ body {
     font-family: "Abel";
 }
 
+.about p {
+    line-height: 1.5;
+}
+
 .about-logo-image {
     /* 
     trying to get the page to wrap around the image...

@@ -64,6 +64,10 @@
     height: 80px;
 }
 
+.clear .slogan {
+    color: white;
+}
+
 .slogan {
     text-align: left;
     line-height: 2.5em;
@@ -84,7 +88,6 @@
 
     display: flex;
     justify-content: right;
-    
 
     list-style: none;
     text-decoration: none;
@@ -114,13 +117,13 @@
     width: 100%;
 }
 
-.content-clear .navbar-links a {
+.clear .navbar-links a {
     text-decoration: none;
     font-size: 14px;
     color: white;
 }
 
-.content-clear .navbar-links li::after {
+.clear .navbar-links li::after {
     content: "";
     width: 0px;
     height: 2px;
@@ -129,7 +132,7 @@
     transition: 300ms ease-out;
 }
 
-.content-clear .navbar-links li:hover::after {
+.clear .navbar-links li:hover::after {
     width: 100%;
 }
 
