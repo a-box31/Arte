@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Slabo+27px&family=Space+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Slabo+27px&family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
 /*
 If loading from a computer:
@@ -18,26 +18,24 @@ If loading from a computer:
 */
 
 @font-face {
-  font-family: GrandHotel;
-  src: url("Fonts/GrandHotel.ttf");
+    font-family: GrandHotel;
+    src: url("Fonts/GrandHotel.ttf");
 
-  font-weight: normal;
-  font-style: normal;
+    font-weight: normal;
+    font-style: normal;
 }
-
 
 :root {
-  --main-color: white;
-  --secondary-color: purple;
-  --default-color: #777;
-  --bg-color: rgb(223, 223, 223); 
-  --text-color: black;
-  
+    --main-color: white;
+    --secondary-color: purple;
+    --default-color: #777;
+    --bg-color: rgb(223, 223, 223);
+    --text-color: black;
+    --clear: rgba(255, 255, 255, 0);
 }
 
-
 * {
-  /* 
+    /* 
     size of elements are determined by padding, margin, and content 
 
     so if we set a element to be 200px and the padding to be 20px, then 
@@ -45,83 +43,93 @@ If loading from a computer:
 
     without it the total area would be 240px
     */
-  box-sizing: border-box;
+    box-sizing: border-box;
 
-  list-style: none;
-  text-decoration: none;
+    list-style: none;
+    text-decoration: none;
 
-  /* font family (default font to be used )*/
-  font-family: 'Slabo 27px', sans-serif;
-  /* font-family: Abel; */
+    /* font family (default font to be used )*/
+    font-family: "Slabo 27px", sans-serif;
+    /* font-family: Abel; */
 
-  color: var(--default-color);
-  margin: 0;
-  padding: 0;
-  scroll-padding-top: 2rem;
-  scroll-behavior: smooth;
+    color: var(--default-color);
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
 }
 
 html,
 body {
-  /*
+    /*
     some html elements have default paddings
     these were removed to make the heading look better
      */
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper {
-  background-color: var(--bg-color);
-  height: 100vh;
-  width: 100vw;
+    background-color: var(--bg-color);
+    height: 100vh;
+    width: 100vw;
 
-  overflow-y: scroll;
-  overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .content {
-  margin: 13px;
-  background-color: var(--main-color);
-  /* display: none; */
+    margin: 13px;
+    background-color: var(--main-color);
+    /* display: none; */
 }
 
+.content-clear {
+    padding: 13px;
+    /* background-color: var(--clear); */
+    background: linear-gradient(to bottom, #00000000, #00000000);
+    transition: all 1s ease-in-out !important;
+}
+
+.content-clear:hover {
+    background: linear-gradient(to bottom, #00000055, #00000000);
+}
 
 .content-section {
-  /* differentiates the section from the previous header*/
-  margin: 1em;
+    /* differentiates the section from the previous header*/
+    margin: 1em;
 }
 
 .container {
-  /* 
+    /* 
     Sets a max width on the section, meaning if the screen grows too large it
     will not out grow 900px
     */
-  max-width: 80vw;
+    max-width: 80vw;
 
-  /* 
+    /* 
     margin for top and bottom set to zero
     
     auto-set the left and right margins for better fitting 
     (ie. centers the text to the screen)
     */
-  margin: 0 auto;
+    margin: 0 auto;
 
-  /* 
+    /* 
     ensures that even if the page is as small as possible there is a padding
     to prevent the text from hugging the edge
     */
-  padding: 0 1.5em;
+    padding: 0 1.5em;
 }
 
 .section-header {
-  /* Styles the section element with font, weight, color, position, and size */
-  font-family: Abel;
-  font-weight: normal;
-  color: #333;
-  /* color: purple; */
-  text-align: center;
-  font-size: 2.5em;
+    /* Styles the section element with font, weight, color, position, and size */
+    font-family: Abel;
+    font-weight: normal;
+    color: #333;
+    /* color: purple; */
+    text-align: center;
+    font-size: 2.5em;
 }
 
 .spacer {
@@ -134,81 +142,70 @@ body {
 
 .spacer h1 {
     font-size: 36px;
-    color: #333;    
+    color: #333;
     padding: 30px 0;
-    font-family: 'Abel'; 
+    font-family: "Abel";
 }
 
-
 .about-logo-image {
-  /* 
+    /* 
     trying to get the page to wrap around the image...
     by using the float property, we can make the image stay left while the
     entire page wraps around it
     image removes itself from the flow and "floats" left of the page
     */
-  float: left;
+    float: left;
 
-  /* Setting the height and width of the images */
-  height: 200px;
-  width: 200px;
+    /* Setting the height and width of the images */
+    height: 200px;
+    width: 200px;
 
-  /* setting a little margin so the text doesn't hug the picture*/
-  margin: 15px;
+    /* setting a little margin so the text doesn't hug the picture*/
+    margin: 15px;
 
-  /*
+    /*
     making the image rounded so the it sticks out more
     It is a property on how far we want to curve the edges of the border
     Since the image is square, 50% is the side that is shortest, taking that 
     it will vector out a circle
     */
-  border-radius: 50%;
+    border-radius: 50%;
 
-  /* 
+    /* 
     creating a border around the circle so that the white-background image can
     be seen as a circle 
     */
-  border: 3px solid;
+    border: 3px solid;
 }
-
 
 /* generic button class */
 .btn {
-  /* button should have text that is centered horizontally (usually after padding) */
-  text-align: center;
+    /* button should have text that is centered horizontally (usually after padding) */
+    text-align: center;
 
-  /* button should have text that is centered vertically (usually after padding) */
-  vertical-align: middle;
+    /* button should have text that is centered vertically (usually after padding) */
+    vertical-align: middle;
 
-  /* padding will make buttons bigger */
-  padding: 0.67em;
+    /* padding will make buttons bigger */
+    padding: 0.67em;
 
-  cursor: pointer;
+    cursor: pointer;
 }
 
-
 .btn-primary {
-  color: white;
-  background-color: #290133;
-  border: none;
-  border-radius: 0.3em;
-  font-weight: normal;
+    color: white;
+    background-color: #290133;
+    border: none;
+    border-radius: 0.3em;
+    font-weight: normal;
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary-color);
+    background-color: var(--secondary-color);
 }
-
-
 
 footer {
     padding: 20px 0;
     text-align: center;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: "Share Tech Mono", monospace;
 }
-
-
-
-
-
-

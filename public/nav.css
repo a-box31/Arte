@@ -2,151 +2,174 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Slabo+27px&display=swap");
 
 @font-face {
-  font-family: GrandHotel;
-  src: url("Fonts/GrandHotel.ttf");
+    font-family: GrandHotel;
+    src: url("Fonts/GrandHotel.ttf");
 
-  font-weight: normal;
-  font-style: normal;
+    font-weight: normal;
+    font-style: normal;
 }
 
-.web-nav {
-  /* background-color: bisque; */
-}
+
 
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  height: fit-content;
-  /* main navigation should be at the center of the screen */
-  text-align: center;
+    height: fit-content;
+    /* main navigation should be at the center of the screen */
+    text-align: center;
 
-  /* size of text should be scaled 30% bigger than the b */
-  font-size: 1em;
+    /* size of text should be scaled 30% bigger than the b */
+    font-size: 1em;
 
-  /* font blends well with the background as opposed to bolder */
-  font-weight: lighter;
+    /* font blends well with the background as opposed to bolder */
+    font-weight: lighter;
 
-  /* Adds a border bottom to section off the navigation links */
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
+    /* Adds a border bottom to section off the navigation links */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
 
-  text-decoration: none;
+    text-decoration: none;
 }
 .main-nav li {
-  /* 
+    /* 
     navigation links should have a 5% padding so they are spaced out as the
     window grows or shrinks
     */
-  padding: 0 15px;
+    padding: 0 15px;
 }
 
 .brand-container {
-  /* background-color: aquamarine; */
-  width: 100%;
-  margin: 0 45px;
-  padding: 3px 20px;
-  letter-spacing: 3px;
+    /* background-color: aquamarine; */
+    width: 100%;
+    margin: 0 45px;
+    padding: 3px 20px;
+    letter-spacing: 3px;
 }
 
 .logo {
-  /* background-color: blueviolet; */
-  text-align: left;
+    /* background-color: blueviolet; */
+    text-align: left;
 }
 
 .logo a {
-  font-family: GrandHotel;
-  font-weight: normal;
-  text-decoration-line: underline;
+    font-family: GrandHotel;
+    font-weight: normal;
+    text-decoration-line: underline;
 
-  color: black;
-  color: rgb(86, 0, 86);
-  font-size: 3.5em;
+    color: black;
+    color: rgb(86, 0, 86);
+    font-size: 3.5em;
 }
 
 .slogan {
-  text-align: left;
-  line-height: 2.5em;
-  font-size: 0.9em;
+    text-align: left;
+    line-height: 2.5em;
+    font-size: 0.9em;
 }
 
 .connections {
-  /* background-color: bisque; */
-  width: fit-content;
-  margin: 0 30px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.navbar-links {
-  /* background-color: tan; */
-  width: 100%;
-
-  display: flex;
-  justify-content: right;
-
-  list-style: none;
-  text-decoration: none;
-  font-family: Abel;
-}
-
-.navbar-links a {
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.navbar-links li {
-  margin-top: 10px;
-}
-
-.navbar-links li::after {
-  content: "";
-  width: 0px;
-  height: 1px;
-  display: block;
-  background: black;
-  transition: 300ms ease-out;
-}
-
-.navbar-links li:hover::after {
-  width: 100%;
-}
-
-.socials {
-  text-align: right;
-  display: inline-block;
-  width: 135px;
-  /* background-color: aqua; */
-  margin: 10px 10px;
-}
-
-.socials img {
-  margin: 5px 5px;
-  width: 15px;
-}
-
-.socials a {
-  text-decoration: none;
-}
-
-.mobile-nav {
-  position: fixed;
-}
-
-@media (max-width: 1000px) {
-  .connections {
     /* background-color: bisque; */
     width: fit-content;
     margin: 0 30px;
     display: flex;
-    flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-end;
-  }
+}
+
+.navbar-links {
+    /* background-color: tan; */
+    width: 100%;
+
+    display: flex;
+    justify-content: right;
+
+    list-style: none;
+    text-decoration: none;
+    font-family: Abel;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 14px;
+    /* color: white; */
+}
+
+.navbar-links li {
+    margin-top: 10px;
+}
+
+.navbar-links li::after {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: black;
+    transition: 300ms ease-out;
+}
+
+
+.navbar-links li:hover::after {
+    width: 100%;
+}
+
+
+
+
+.content-clear .navbar-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+}
+
+.content-clear .navbar-links li::after {
+    content: "";
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: rgb(255, 255, 255);
+    transition: 300ms ease-out;
+}
+
+.content-clear .navbar-links li:hover::after {
+    width: 100%;
+}
+
+
+.socials {
+    text-align: right;
+    display: inline-block;
+    width: 135px;
+    /* background-color: aqua; */
+    margin: 10px 10px;
+}
+
+.socials img {
+    margin: 5px 5px;
+    width: 15px;
+}
+
+.socials a {
+    text-decoration: none;
+}
+
+.mobile-nav {
+    position: fixed;
+}
+
+@media (max-width: 1000px) {
+    .connections {
+        /* background-color: bisque; */
+        width: fit-content;
+        margin: 0 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
 }
 
 @media (max-height: 800px) {
-  .slogan{
-    display: none;
-  }
+    .slogan {
+        display: none;
+    }
 }
