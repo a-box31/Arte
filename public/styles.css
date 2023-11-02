@@ -169,13 +169,13 @@ body {
     Since the image is square, 50% is the side that is shortest, taking that 
     it will vector out a circle
     */
-    border-radius: 50%;
+    /* border-radius: 50%; */
 
     /* 
     creating a border around the circle so that the white-background image can
     be seen as a circle 
     */
-    border: 3px solid;
+    /* border: 3px solid; */
 }
 
 /* generic button class */
