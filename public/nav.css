@@ -174,3 +174,31 @@
         display: none;
     }
 }
+
+@media (max-width: 725px) {
+    .main-nav {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .brand-container {
+        width: unset;
+    }
+
+    .socials {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+
+    div.logo {
+        text-align: center;
+        margin-right: 10px;
+    }
+
+    .slogan {
+        text-align: center;
+    }
+}
