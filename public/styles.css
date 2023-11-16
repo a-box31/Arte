@@ -28,8 +28,7 @@ If loading from a computer:
 :root {
     --main-color: white;
     --secondary-color: purple;
-    /* --default-color: #777; */
-    --default-color: black;
+    --default-color: #777;
     --bg-color: rgb(223, 223, 223);
     --text-color: black;
     --clear: rgba(255, 255, 255, 0);
