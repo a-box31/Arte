@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <!-- title of the page when searched and in the tab-->
-    <title>Arte - About</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- description of the page when searched for in -->
-    <!-- google search results -->
-    <meta
-      name="description"
-      content="At Arte, we celebrate diversity and 
+<head>
+  <!-- title of the page when searched and in the tab-->
+  <title>Arte - About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- description of the page when searched for in -->
+  <!-- google search results -->
+  <meta name="description" content="At Arte, we celebrate diversity and 
                        individuality. Our clothing empowers you to express
                        your unique personality and make a bold statement without
                        saying a word. Whether you're dressing for a special 
                        occasion or expressing your daily creativity, we've got 
-                       you covered."
-    />
+                       you covered." />
 
-    <link href="styles.css" rel="stylesheet" defer/>
-    <link rel="stylesheet" href="nav.css" defer/>
-    <link rel="stylesheet" href="footer.css" defer/>
-    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.svg"/>
+  <link href="styles.css" rel="stylesheet" defer />
+  <link rel="stylesheet" href="nav.css" defer />
+  <link rel="stylesheet" href="footer.css" defer />
+  <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.svg" />
 
-  </head>
+</head>
 
-  <body>
-    <div class="wrapper">
-      <div class="content">
+<body>
+  <div class="wrapper">
+    <div class="content">
 
-        <%- include('./partials/navigation.ejs')%>
+      <%- include('./partials/navigation.ejs')%>
 
         <div class="spacer container">
-            <hr>
-            <h1>OUR STORY</h1>
-            <hr>
+          <hr>
+          <h1>OUR STORY</h1>
+          <hr>
         </div>
 
 
@@ -49,35 +47,52 @@
                       image tag is empty and asks for source(src) from the relative
                       page you wish to pull from ie Images folder
                   -->
-          
+
           <img class="about-logo-image" src="Images/logo.svg" />
 
           <!--paragraph element: many sentences-->
           <p>
-            "Arte," the e-commerce jean jacket store, is where fashion and art converge to create a unique and captivating experience. When you don one of our remarkable jean jackets and take a leisurely stroll down the street, you're bound to attract a cascade of compliments. We've crafted these jackets with meticulous attention to detail, fusing art and fashion seamlessly.
+            "Arte," the e-commerce jean jacket store, is where fashion and art converge to create a unique and
+            captivating experience. When you don one of our remarkable jean jackets and take a leisurely stroll down the
+            street, you're bound to attract a cascade of compliments. We've crafted these jackets with meticulous
+            attention to detail, fusing art and fashion seamlessly.
           </p>
 
           <br>
 
           <p>
-            Allow me to introduce myself: I'm Rafael Beita, and I proudly call Colombia my home. My life centers around my two wonderful children, while my wife remains in Colombia. It's our collective aspiration that the jean jacket art we offer doesn't just adorn your body but also transforms lives.
+            Allow me to introduce myself: I'm Rafael Beita, and I proudly call Colombia my home. My life centers around
+            my two wonderful children, while my wife remains in Colombia. It's our collective aspiration that the jean
+            jacket art we offer doesn't just adorn your body but also transforms lives.
 
-            Our fundamental concept is rooted in the idea that you can carry your art with you wherever you go. It's an artful rebellion against the conventional notion that art must be confined to walls. With our jean jackets, the art becomes an integral part of your daily life. Wear your passion, wear your story, and let the world admire your style.
+            Our fundamental concept is rooted in the idea that you can carry your art with you wherever you go. It's an
+            artful rebellion against the conventional notion that art must be confined to walls. With our jean jackets,
+            the art becomes an integral part of your daily life. Wear your passion, wear your story, and let the world
+            admire your style.
 
-            Arte offers a diverse range of jean jackets, each a canvas for creative expression. Our collection features an array of designs that cater to different tastes and personalities. Whether you prefer bold and vibrant artwork or subtle and minimalist patterns, you'll find something that resonates with your individuality.
-            
-            Our commitment to quality is unwavering. Every jacket we offer is a testament to our dedication to creating wearable art. We take pride in the craftsmanship and durability of our products, ensuring they stand the test of time.
+            Arte offers a diverse range of jean jackets, each a canvas for creative expression. Our collection features
+            an array of designs that cater to different tastes and personalities. Whether you prefer bold and vibrant
+            artwork or subtle and minimalist patterns, you'll find something that resonates with your individuality.
 
-            When you shop at Arte, you're not just buying a jean jacket; you're investing in a piece of wearable art. We're more than an e-commerce store; we're a celebration of self-expression, a bridge between art and fashion, and an embodiment of your unique identity.
+            Our commitment to quality is unwavering. Every jacket we offer is a testament to our dedication to creating
+            wearable art. We take pride in the craftsmanship and durability of our products, ensuring they stand the
+            test of time.
 
-            Join us in redefining the boundaries of art and fashion. Explore our collection, find the jacket that speaks to you, and be ready to experience the world of compliments that follows when you walk down the street with an Arte jacket.
+            When you shop at Arte, you're not just buying a jean jacket; you're investing in a piece of wearable art.
+            We're more than an e-commerce store; we're a celebration of self-expression, a bridge between art and
+            fashion, and an embodiment of your unique identity.
+
+            Join us in redefining the boundaries of art and fashion. Explore our collection, find the jacket that speaks
+            to you, and be ready to experience the world of compliments that follows when you walk down the street with
+            an Arte jacket.
           </p>
         </section>
 
         <%- include('./partials/footer.ejs') %>
-        
-      </div>
+
     </div>
-  </body>
+  </div>
+  <%- include('./partials/jquery_script.ejs') %>
+</body>
 
 </html>

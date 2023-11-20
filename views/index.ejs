@@ -5,36 +5,36 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <!-- title of the page when searched and in the tab-->
-        <title>Arte - Official Website</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- description of the page when searched for in -->
-        <!-- google search results -->
-        <meta
-            name="description"
-            content="At Arte, we celebrate diversity and 
+<head>
+    <!-- title of the page when searched and in the tab-->
+    <title>Arte - Official Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- description of the page when searched for in -->
+    <!-- google search results -->
+    <meta name="description" content="At Arte, we celebrate diversity and 
                        individuality. Our clothing empowers you to express
                        your unique personality and make a bold statement without
                        saying a word. Whether you're dressing for a special 
                        occasion or expressing your daily creativity, we've got 
-                       you covered."
-        />
+                       you covered." />
 
-        <link href="styles.css" rel="stylesheet" defer/>
-        <link href="index.css" rel="stylesheet" defer />
-        <link href="nav.css" rel="stylesheet" defer />
-        <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.svg" />
+    <link href="styles.css" rel="stylesheet" defer />
+    <link href="index.css" rel="stylesheet" defer />
+    <link href="nav.css" rel="stylesheet" defer />
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.svg" />
 
-    </head>
+</head>
 
-    <body>
-        <div class="slideshow">
-            <div class="content-clear">
-                <%- include('./partials/clear_navigation.ejs')%>
-            </div>
-        </div>
-    </body>
+<body>
+    <div class="content-clear">
+        <%- include('./partials/clear_navigation.ejs') %>
+    </div>
+    <div class="slideshow"></div>
+
+    <%- include('./partials/jquery_script.ejs') %>
+</body>
+
 </html>

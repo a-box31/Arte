@@ -85,14 +85,20 @@ body {
 }
 
 .content-clear {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 13px;
     /* background-color: var(--clear); */
-    background: linear-gradient(to bottom, #00000000, #00000000);
+    /* background: linear-gradient(to bottom, #00000000, #00000000); */
+    background: linear-gradient(to bottom, #00000099, 50%, #00000000);
     transition: all 1s ease-in-out !important;
 }
 
 .content-clear:hover {
-    background: linear-gradient(to bottom, #00000055, #00000000);
+    /* background: linear-gradient(to bottom, #00000055, #00000000); */
 }
 
 .content-section {
