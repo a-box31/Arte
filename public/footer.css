@@ -92,8 +92,9 @@ hr {
     }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 300px) {
     .newsletter-signup input {
         /* width: unset; */
+        font-size: revert;
     }
 }
