@@ -34,7 +34,7 @@ footer {
 }
 
 .newsletter-signup input {
-    width: 100%;
+    /* width: 100%; */
     margin: 10px 10px;
     padding: 10px;
     border: none;
@@ -44,7 +44,7 @@ footer {
 }
 
 .newsletter-signup button {
-    background-color: #290133;
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     margin-top: 10px;
@@ -55,7 +55,8 @@ footer {
 }
 
 .newsletter-signup button:hover {
-    background-color: purple;
+    background-color: #b2cde9;
+    color: black;
 }
 
 .copyright {
@@ -80,15 +81,20 @@ hr {
 
 /* Media query to make the form full-width on smaller screens */
 @media (max-width: 858px) {
-
-.newsletter-signup form {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    /* background-color: red; */
+    .newsletter-signup form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        /* background-color: red; */
+    }
 }
 
+@media (max-width: 300px) {
+    .newsletter-signup input {
+        /* width: unset; */
+        font-size: revert;
+    }
 }

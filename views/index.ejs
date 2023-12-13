@@ -29,12 +29,40 @@
 </head>
 
 <body>
-    <div class="slideshow">
-        <div class="content-clear">
-            <%- include('./partials/clear_navigation.ejs')%>
-        </div>
+    <div class="content-clear">
+        <%- include('./partials/clear_navigation.ejs') %>
     </div>
-    <%- include('./partials/jquery_scripts.ejs')%>
+
+    <div class="slideshow">
+        <img class="jacket-slides" src="./Images/Products/Jackets/jacket0.png">
+        <img class="jacket-slides" src="./Images/Products/Jackets/jacket1.png">
+        <img class="jacket-slides" src="./Images/Products/Jackets/jacket2.png">
+        <img class="jacket-slides" src="./Images/Products/Jackets/jacket3.png">
+        <img class="jacket-slides" src="./Images/Products/Jackets/jacket4.png">
+        <img class="jacket-slides" src="./Images/Products/Jackets/jacket5.png">
+    </div>
+
+
+    <%- include('./partials/jquery_script.ejs') %>
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("jacket-slides");
+                var background = document.getElementsByClassName("slideshow");
+                var colors = ["#abcdef", "#db7093", "#cc6540", "#e8ba4c", "#be8236", "#cc2c1e"];
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                // background[0].style.backgroundColor = colors[myIndex - 1];
+                setTimeout(carousel, 6000);
+            }
+        </script>
 </body>
 
 </html>

@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <!-- title of the page when searched and in the tab-->
-    <title>Arte - Store</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- description of the page when searched for in -->
-    <!-- google search results -->
-    <meta
-      name="description"
-      content="At Arte, we celebrate diversity and 
+<head>
+  <!-- title of the page when searched and in the tab-->
+  <title>Arte - Store</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- description of the page when searched for in -->
+  <!-- google search results -->
+  <meta name="description" content="At Arte, we celebrate diversity and 
                        individuality. Our clothing empowers you to express
                        your unique personality and make a bold statement without
                        saying a word. Whether you're dressing for a special 
                        occasion or expressing your daily creativity, we've got 
-                       you covered."
-    />
+                       you covered." />
 
-    <link href="styles.css" rel="stylesheet" defer />
-    <link href="nav.css" rel="stylesheet" defer />
-    <link href="store.css" rel="stylesheet" defer />
-    <link rel="stylesheet" href="footer.css" defer>
-    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.svg"/>
+  <link href="styles.css" rel="stylesheet" defer />
+  <link href="nav.css" rel="stylesheet" defer />
+  <link href="store.css" rel="stylesheet" defer />
+  <link rel="stylesheet" href="footer.css" defer>
+  <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.svg" />
 
 
-    <!-- stripe implementation -->
-    <!-- must defer to let the check out script load first-->
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
+  <!-- stripe implementation -->
+  <!-- must defer to let the check out script load first-->
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
 
-    <script>
-      var stripePublicKey = "<%=stripePublicKey%>";
-    </script>
+  <script>
+    var stripePublicKey = "<%=stripePublicKey%>";
+  </script>
 
-    <!-- 
+  <!-- 
             Script Tag to import javascript
             Since nothing else renders until the javascript file is entered, it is a problem
             Solution: include async attribute - tells browser to download store.js in
             background and continue to download body at the same time
     -->
-    <script type="module" src="store.js"></script>
-  </head>
+  <script type="module" src="store.js"></script>
+</head>
 
-  <body>
-    <div class="wrapper">
-      <div class="content">
-        <%- include('./partials/navigation.ejs')%>
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <%- include('./partials/navigation.ejs')%>
 
         <div class="spacer container">
-            <hr>
-            <h1>Collection</h1>
-            <hr>
+          <hr>
+          <h1>Collection</h1>
+          <hr>
         </div>
 
         <h2 class="section-header">Browse Templates</h2>
@@ -71,19 +69,23 @@
                         -->
             <% products.forEach( function(item) { %>
 
-            <div class="shop-item" data-item-id="<%= item.id %>">
-              <!-- divided sections for Album Info -->
-              <span class="shop-item-title"> <%= item.name %> </span>
-              <img class="shop-item-image" src="<%= item.images[0] %>" />
-              <div class="shop-item-details">
-                <span class="shop-item-price"><%= item.price / 100 %></span>
-                <button class="btn btn-primary shop-item-button" role="button">
-                  ADD TO CART
-                </button>
+              <div class="shop-item" data-item-id="<%= item.id %>">
+                <!-- divided sections for Album Info -->
+                <span class="shop-item-title">
+                  <%= item.name %>
+                </span>
+                <img class="shop-item-image" src="<%= item.images[0] %>" />
+                <div class="shop-item-details">
+                  <span class="shop-item-price">
+                    <%= item.price / 100 %>
+                  </span>
+                  <button class="btn btn-primary shop-item-button" role="button">
+                    ADD TO CART
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <% }) %>
+              <% }) %>
           </div>
         </section>
 
@@ -110,8 +112,10 @@
         </section>
 
         <%- include('./partials/footer.ejs') %>
-      </div>
     </div>
-    <%- include('./partials/jquery_scripts.ejs')%>
-  </body>
+  </div>
+
+  <%- include('./partials/jquery_script.ejs') %>
+</body>
+
 </html>
